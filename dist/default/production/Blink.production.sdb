@@ -307,13 +307,11 @@ channel_FVRBuf2 31
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"35 C:\Users\chima\MPLABXProjects\Blink\main.c
+"39 C:\Users\chima\MPLABXProjects\Blink\main.c
 [v _main main `(v  1 e 1 0 ]
-"53
+"61
 [v _IO_pins_init IO_pins_init `(v  1 e 1 0 ]
-"65
-[v _blink blink `(v  1 e 1 0 ]
-"73
+"74
 [v _ADC_init ADC_init `(v  1 e 1 0 ]
 "81
 [v _ADC_SelChannel ADC_SelChannel `(v  1 e 1 0 ]
@@ -703,7 +701,7 @@ channel_FVRBuf2 31
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
 "148
 [v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
-[s S4460 . 1 `uc 1 . 1 0 :2:0 
+[s S4563 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 ANSC2 1 0 :1:2 
 `uc 1 ANSC3 1 0 :1:3 
 `uc 1 ANSC4 1 0 :1:4 
@@ -712,11 +710,11 @@ channel_FVRBuf2 31
 `uc 1 ANSC7 1 0 :1:7 
 ]
 "164
-[u S4468 . 1 `S4460 1 . 1 0 ]
-[v _ANSELCbits ANSELCbits `VES4468  1 e 1 @3898 ]
+[u S4571 . 1 `S4563 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES4571  1 e 1 @3898 ]
 "199
 [v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
-[s S4479 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S4582 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -726,8 +724,8 @@ channel_FVRBuf2 31
 `uc 1 ANSD7 1 0 :1:7 
 ]
 "216
-[u S4488 . 1 `S4479 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES4488  1 e 1 @3899 ]
+[u S4591 . 1 `S4582 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES4591  1 e 1 @3899 ]
 "261
 [v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
 "2720
@@ -807,7 +805,7 @@ channel_FVRBuf2 31
 ]
 [u S790 . 1 `S735 1 . 1 0 `S744 1 . 1 0 `S753 1 . 1 0 `S762 1 . 1 0 `S769 1 . 1 0 `S776 1 . 1 0 `S782 1 . 1 0 `S787 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES790  1 e 1 @3969 ]
-[s S4253 . 1 `uc 1 RC0 1 0 :1:0 
+[s S4358 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -817,7 +815,7 @@ channel_FVRBuf2 31
 `uc 1 RC7 1 0 :1:7 
 ]
 "6908
-[s S4262 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S4367 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 T5CKI 1 0 :1:2 
 `uc 1 SCK 1 0 :1:3 
@@ -826,7 +824,7 @@ channel_FVRBuf2 31
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S4271 . 1 `uc 1 P2B 1 0 :1:0 
+[s S4376 . 1 `uc 1 P2B 1 0 :1:0 
 `uc 1 P2A 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 SCL 1 0 :1:3 
@@ -835,7 +833,7 @@ channel_FVRBuf2 31
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S4280 . 1 `uc 1 T1CKI 1 0 :1:0 
+[s S4385 . 1 `uc 1 T1CKI 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 SCK1 1 0 :1:3 
@@ -844,7 +842,7 @@ channel_FVRBuf2 31
 `uc 1 TX1 1 0 :1:6 
 `uc 1 RX1 1 0 :1:7 
 ]
-[s S4289 . 1 `uc 1 T3CKI 1 0 :1:0 
+[s S4394 . 1 `uc 1 T3CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CTPLS 1 0 :1:2 
 `uc 1 SCL1 1 0 :1:3 
@@ -853,7 +851,7 @@ channel_FVRBuf2 31
 `uc 1 CK1 1 0 :1:6 
 `uc 1 DT1 1 0 :1:7 
 ]
-[s S4298 . 1 `uc 1 T3G 1 0 :1:0 
+[s S4403 . 1 `uc 1 T3G 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AN14 1 0 :1:2 
 `uc 1 AN15 1 0 :1:3 
@@ -862,13 +860,13 @@ channel_FVRBuf2 31
 `uc 1 AN18 1 0 :1:6 
 `uc 1 AN19 1 0 :1:7 
 ]
-[s S4307 . 1 `uc 1 . 1 0 :1:0 
+[s S4412 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[u S4311 . 1 `S4253 1 . 1 0 `S4262 1 . 1 0 `S4271 1 . 1 0 `S4280 1 . 1 0 `S4289 1 . 1 0 `S4298 1 . 1 0 `S4307 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES4311  1 e 1 @3970 ]
-[s S4429 . 1 `uc 1 RD0 1 0 :1:0 
+[u S4416 . 1 `S4358 1 . 1 0 `S4367 1 . 1 0 `S4376 1 . 1 0 `S4385 1 . 1 0 `S4394 1 . 1 0 `S4403 1 . 1 0 `S4412 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES4416  1 e 1 @3970 ]
+[s S4244 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -878,7 +876,7 @@ channel_FVRBuf2 31
 `uc 1 RD7 1 0 :1:7 
 ]
 "7206
-[s S4509 . 1 `uc 1 . 1 0 :2:0 
+[s S4253 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 P2B 1 0 :1:2 
 `uc 1 P2C 1 0 :1:3 
 `uc 1 P2D 1 0 :1:4 
@@ -886,16 +884,16 @@ channel_FVRBuf2 31
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S4517 . 1 `uc 1 . 1 0 :1:0 
+[s S4261 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP4 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S4523 . 1 `uc 1 . 1 0 :3:0 
+[s S4267 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_SS2 1 0 :1:3 
 ]
-[s S4526 . 1 `uc 1 SCK2 1 0 :1:0 
+[s S4270 . 1 `uc 1 SCK2 1 0 :1:0 
 `uc 1 SDI2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 nSS2 1 0 :1:3 
@@ -904,12 +902,12 @@ channel_FVRBuf2 31
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S4535 . 1 `uc 1 SCL2 1 0 :1:0 
+[s S4279 . 1 `uc 1 SCL2 1 0 :1:0 
 `uc 1 SDA2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SS2 1 0 :1:3 
 ]
-[s S4540 . 1 `uc 1 AN20 1 0 :1:0 
+[s S4284 . 1 `uc 1 AN20 1 0 :1:0 
 `uc 1 AN21 1 0 :1:1 
 `uc 1 AN22 1 0 :1:2 
 `uc 1 AN23 1 0 :1:3 
@@ -918,8 +916,8 @@ channel_FVRBuf2 31
 `uc 1 AN26 1 0 :1:6 
 `uc 1 AN27 1 0 :1:7 
 ]
-[u S4549 . 1 `S4429 1 . 1 0 `S4509 1 . 1 0 `S4517 1 . 1 0 `S4523 1 . 1 0 `S4526 1 . 1 0 `S4535 1 . 1 0 `S4540 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES4549  1 e 1 @3971 ]
+[u S4293 . 1 `S4244 1 . 1 0 `S4253 1 . 1 0 `S4261 1 . 1 0 `S4267 1 . 1 0 `S4270 1 . 1 0 `S4279 1 . 1 0 `S4284 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES4293  1 e 1 @3971 ]
 "7561
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "7673
@@ -930,7 +928,7 @@ channel_FVRBuf2 31
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "8283
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S4380 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S4483 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -940,11 +938,11 @@ channel_FVRBuf2 31
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "8537
-[u S4398 . 1 `S4380 1 . 1 0 `S4253 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES4398  1 e 1 @3988 ]
+[u S4501 . 1 `S4483 1 . 1 0 `S4358 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES4501  1 e 1 @3988 ]
 "8727
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S4420 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S4523 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -954,8 +952,8 @@ channel_FVRBuf2 31
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "8759
-[u S4438 . 1 `S4420 1 . 1 0 `S4429 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES4438  1 e 1 @3989 ]
+[u S4541 . 1 `S4523 1 . 1 0 `S4244 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES4541  1 e 1 @3989 ]
 "8949
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "9065
@@ -1040,21 +1038,21 @@ channel_FVRBuf2 31
 [v _T3GCON T3GCON `VEuc  1 e 1 @4020 ]
 "13473
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
-[s S4647 . 1 `uc 1 ADCS 1 0 :3:0 
+[s S4643 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "13494
-[s S4652 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S4648 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
 `uc 1 ACQT1 1 0 :1:4 
 `uc 1 ACQT2 1 0 :1:5 
 ]
-[u S4659 . 1 `S4647 1 . 1 0 `S4652 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES4659  1 e 1 @4032 ]
+[u S4655 . 1 `S4643 1 . 1 0 `S4648 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES4655  1 e 1 @4032 ]
 "13544
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "13612
@@ -1210,7 +1208,7 @@ channel_FVRBuf2 31
 [v _LATD3 LATD3 `VEb  1 e 0 @31843 ]
 "20506
 [v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
-"33 C:\Users\chima\MPLABXProjects\Blink\main.c
+"37 C:\Users\chima\MPLABXProjects\Blink\main.c
 [v _light light `ui  1 e 2 0 ]
 "38 C:\Users\chima\MPLABXProjects\Blink\mcc_generated_files/ext_int.c
 [v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -1243,24 +1241,19 @@ channel_FVRBuf2 31
 [v _timer3ReloadVal timer3ReloadVal `VEui  1 e 2 0 ]
 "57
 [v _TMR3_InterruptHandler TMR3_InterruptHandler `*.37(v  1 e 2 0 ]
-"35 C:\Users\chima\MPLABXProjects\Blink\main.c
+"39 C:\Users\chima\MPLABXProjects\Blink\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"46
-[v main@time time `ui  1 a 2 12 ]
-"51
+"54
+[v main@time time `ui  1 a 2 13 ]
+"59
 } 0
-"65
-[v _blink blink `(v  1 e 1 0 ]
-{
-"71
-} 0
-"53
+"61
 [v _IO_pins_init IO_pins_init `(v  1 e 1 0 ]
 {
-"63
+"72
 } 0
-"73
+"74
 [v _ADC_init ADC_init `(v  1 e 1 0 ]
 {
 "79
@@ -1273,8 +1266,9 @@ channel_FVRBuf2 31
 [v ADC_Read@result result `ui  1 a 2 9 ]
 "86
 [v ADC_Read@channel channel `uc  1 a 1 wreg ]
+"88
 [v ADC_Read@channel channel `uc  1 a 1 8 ]
-"93
+"95
 } 0
 "81
 [v _ADC_SelChannel ADC_SelChannel `(v  1 e 1 0 ]

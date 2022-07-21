@@ -1,12 +1,40 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"27 main.c
+"32 main.c
 [v _IO_pins_init `(v ~T0 @X0 0 ef ]
-"29
+"33
 [v _ADC_init `(v ~T0 @X0 0 ef ]
-"28
-[v _blink `(v ~T0 @X0 0 ef ]
-"31
+"7149 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18lf46k22.h
+[s S358 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S358 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"7159
+[s S359 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S359 . . P2B P2C P2D P1B P1C P1D ]
+"7168
+[s S360 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S360 . . CCP4 . TX2 RX2 ]
+"7175
+[s S361 :3 `uc 1 :1 `uc 1 ]
+[n S361 . . NOT_SS2 ]
+"7179
+[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S362 . SCK2 SDI2 . nSS2 SDO2 . CK2 DT2 ]
+"7189
+[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S363 . SCL2 SDA2 . SS2 ]
+"7195
+[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S364 . AN20 AN21 AN22 AN23 AN24 AN25 AN26 AN27 ]
+"7148
+[u S357 `S358 1 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 ]
+[n S357 . . . . . . . . ]
+"7206
+[v _PORTDbits `VS357 ~T0 @X0 0 e@3971 ]
+[v F38 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
+[v __delay `JF38 ~T0 @X0 0 e ]
+[p i __delay ]
+"35 main.c
 [v _ADC_Read `(ui ~T0 @X0 0 ef1`uc ]
 "6842 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18lf46k22.h
 [s S350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -34,11 +62,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S349 . . . . . . . . ]
 "6908
 [v _PORTCbits `VS349 ~T0 @X0 0 e@3970 ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
-"8516 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18lf46k22.h
+"8516
 [s S402 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S402 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
 "8526
@@ -76,32 +100,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S7 . . ]
 "216
 [v _ANSELDbits `VS7 ~T0 @X0 0 e@3899 ]
-"7149
-[s S358 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S358 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"7159
-[s S359 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S359 . . P2B P2C P2D P1B P1C P1D ]
-"7168
-[s S360 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . . CCP4 . TX2 RX2 ]
-"7175
-[s S361 :3 `uc 1 :1 `uc 1 ]
-[n S361 . . NOT_SS2 ]
-"7179
-[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . SCK2 SDI2 . nSS2 SDO2 . CK2 DT2 ]
-"7189
-[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S363 . SCL2 SDA2 . SS2 ]
-"7195
-[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S364 . AN20 AN21 AN22 AN23 AN24 AN25 AN26 AN27 ]
-"7148
-[u S357 `S358 1 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 ]
-[n S357 . . . . . . . . ]
-"7206
-[v _PORTDbits `VS357 ~T0 @X0 0 e@3971 ]
 "13618
 [s S643 :1 `uc 1 :1 `uc 1 ]
 [n S643 . . GO_NOT_DONE ]
@@ -6737,150 +6735,130 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 158: __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
 [; ;pic18.h: 192: unsigned char __t1rd16on(void);
 [; ;pic18.h: 193: unsigned char __t3rd16on(void);
-[; ;main.c: 27: void IO_pins_init(void);
-[; ;main.c: 28: void blink(void);
-[; ;main.c: 29: void ADC_init(void);
-[; ;main.c: 30: void ADC_SelChannel(uint8_t c);
-[; ;main.c: 31: uint16_t ADC_Read(uint8_t channel);
-"33 main.c
+[; ;main.c: 32: void IO_pins_init(void);
+[; ;main.c: 33: void ADC_init(void);
+[; ;main.c: 34: void ADC_SelChannel(uint8_t c);
+[; ;main.c: 35: uint16_t ADC_Read(uint8_t channel);
+"37 main.c
 [v _temp `ui ~T0 @X0 1 e ]
 [v _light `ui ~T0 @X0 1 e ]
-[; ;main.c: 33: uint16_t temp, light;
+[; ;main.c: 37: uint16_t temp, light;
 [v $root$_main `(v ~T0 @X0 0 e ]
-"35
+"39
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 35: void main (void){
+[; ;main.c: 39: void main (void){
 [e :U _main ]
 [f ]
-[; ;main.c: 36: IO_pins_init();
-"36
+[; ;main.c: 40: IO_pins_init();
+"40
 [e ( _IO_pins_init ..  ]
-[; ;main.c: 37: ADC_init();
-"37
+[; ;main.c: 41: ADC_init();
+"41
 [e ( _ADC_init ..  ]
-[; ;main.c: 39: while(1){
-"39
+[; ;main.c: 43: while(1){
+"43
 [e :U 851 ]
 {
-[; ;main.c: 40: blink();
-"40
-[e ( _blink ..  ]
-[; ;main.c: 41: temp = ADC_Read(27);
-"41
-[e = _temp ( _ADC_Read (1 -> -> 27 `i `uc ]
-[; ;main.c: 42: light = ADC_Read(26);
-"42
-[e = _light ( _ADC_Read (1 -> -> 26 `i `uc ]
-[; ;main.c: 45: PORTCbits.RC5 = 1;
+[; ;main.c: 44: PORTDbits.RD5 = 1;
+"44
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 45: _delay((unsigned long)((1000)*((8000000)/4000.0)));
 "45
-[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 46: for (uint16_t time = 0; time < light; time++){
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 46: PORTDbits.RD5 = 0;
 "46
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 47: _delay((unsigned long)((1000)*((8000000)/4000.0)));
+"47
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 49: temp = ADC_Read(27);
+"49
+[e = _temp ( _ADC_Read (1 -> -> 27 `i `uc ]
+[; ;main.c: 50: light = ADC_Read(26);
+"50
+[e = _light ( _ADC_Read (1 -> -> 26 `i `uc ]
+[; ;main.c: 53: PORTCbits.RC5 = 1;
+"53
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 54: for (uint16_t time = 0; time < light; time++){
+"54
 {
 [v _time `ui ~T0 @X0 1 a ]
 [e = _time -> -> 0 `i `ui ]
 [e $U 856  ]
 [e :U 853 ]
 {
-[; ;main.c: 47: _delay((unsigned long)((1)*((8000000)/4000.0)));
-"47
+[; ;main.c: 55: _delay((unsigned long)((1)*((8000000)/4000.0)));
+"55
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"48
+"56
 }
-"46
+"54
 [e ++ _time -> -> 1 `i `ui ]
 [e :U 856 ]
 [e $ < _time _light 853  ]
 [e :U 854 ]
-"48
+"56
 }
-[; ;main.c: 48: }
-[; ;main.c: 49: PORTCbits.RC5 = 0;
-"49
+[; ;main.c: 56: }
+[; ;main.c: 57: PORTCbits.RC5 = 0;
+"57
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"50
+"58
 }
 [e :U 850 ]
-"39
+"43
 [e $U 851  ]
 [e :U 852 ]
-[; ;main.c: 50: }
-[; ;main.c: 51: }
-"51
+[; ;main.c: 58: }
+[; ;main.c: 59: }
+"59
 [e :UE 849 ]
 }
-"53
+"61
 [v _IO_pins_init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 53: void IO_pins_init(void){
+[; ;main.c: 61: void IO_pins_init(void){
 [e :U _IO_pins_init ]
 [f ]
-[; ;main.c: 55: TRISCbits.TRISC5 = 0;
-"55
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 56: TRISDbits.TRISD5 = 0;
-"56
-[e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 57: TRISDbits.TRISD6 = 1;
-"57
-[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 58: TRISDbits.TRISD7 = 1;
-"58
-[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 59: ANSELCbits.ANSC5 = 0;
-"59
-[e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 60: ANSELDbits.ANSD5 = 0;
-"60
-[e = . . _ANSELDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 61: ANSELDbits.ANSD6 = 1;
-"61
-[e = . . _ANSELDbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 62: ANSELDbits.ANSD7 = 1;
-"62
-[e = . . _ANSELDbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 63: }
+[; ;main.c: 63: TRISCbits.TRISC5 = 0;
 "63
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 64: TRISDbits.TRISD5 = 0;
+"64
+[e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 65: TRISDbits.TRISD6 = 1;
+"65
+[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 66: TRISDbits.TRISD7 = 1;
+"66
+[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 68: ANSELCbits.ANSC5 = 0;
+"68
+[e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 69: ANSELDbits.ANSD5 = 0;
+"69
+[e = . . _ANSELDbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 70: ANSELDbits.ANSD6 = 1;
+"70
+[e = . . _ANSELDbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 71: ANSELDbits.ANSD7 = 1;
+"71
+[e = . . _ANSELDbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 72: }
+"72
 [e :UE 857 ]
 }
-"65
-[v _blink `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 65: void blink(void){
-[e :U _blink ]
-[f ]
-[; ;main.c: 66: PORTDbits.RD5 = 1;
-"66
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 67: _delay((unsigned long)((1000)*((8000000)/4000.0)));
-"67
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 68: PORTDbits.RD5 = 0;
-"68
-[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 69: _delay((unsigned long)((1000)*((8000000)/4000.0)));
-"69
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 70: return;
-"70
-[e $UE 858  ]
-[; ;main.c: 71: }
-"71
-[e :UE 858 ]
-}
-"73
+"74
 [v _ADC_init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 73: void ADC_init(void){
+[; ;main.c: 74: void ADC_init(void){
 [e :U _ADC_init ]
 [f ]
-[; ;main.c: 74: ADCON0bits.GO = 0;
-"74
-[e = . . _ADCON0bits 2 1 -> -> 0 `i `uc ]
-[; ;main.c: 75: ADCON0bits.ADON = 1;
+[; ;main.c: 75: ADCON0bits.GO = 0;
 "75
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[e = . . _ADCON0bits 2 1 -> -> 0 `i `uc ]
 [; ;main.c: 76: ADCON2bits.ADFM = 1;
 "76
 [e = . . _ADCON2bits 0 3 -> -> 1 `i `uc ]
@@ -6889,10 +6867,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _ADCON2bits 0 0 -> -> 3 `i `uc ]
 [; ;main.c: 78: return;
 "78
-[e $UE 859  ]
+[e $UE 858  ]
 [; ;main.c: 79: }
 "79
-[e :UE 859 ]
+[e :UE 858 ]
 }
 "81
 [v _ADC_SelChannel `(v ~T0 @X0 1 ef1`uc ]
@@ -6906,10 +6884,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _ADCON0bits 1 2 _c ]
 [; ;main.c: 83: return;
 "83
-[e $UE 860  ]
+[e $UE 859  ]
 [; ;main.c: 84: }
 "84
-[e :UE 860 ]
+[e :UE 859 ]
 }
 "86
 [v _ADC_Read `(ui ~T0 @X0 1 ef1`uc ]
@@ -6922,27 +6900,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _result `ui ~T0 @X0 1 a ]
 [; ;main.c: 87: uint16_t result = 0;
 [e = _result -> -> 0 `i `ui ]
-[; ;main.c: 88: ADC_SelChannel(channel);
+[; ;main.c: 88: ADCON0bits.ADON = 1;
 "88
-[e ( _ADC_SelChannel (1 _channel ]
-[; ;main.c: 89: ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 89: ADC_SelChannel(channel);
 "89
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 90: while(ADCON0bits.GO);
+[e ( _ADC_SelChannel (1 _channel ]
+[; ;main.c: 90: ADCON0bits.GO = 1;
 "90
-[e $U 862  ]
-[e :U 863 ]
-[e :U 862 ]
-[e $ != -> . . _ADCON0bits 2 1 `i -> -> -> 0 `i `Vuc `i 863  ]
-[e :U 864 ]
-[; ;main.c: 91: result = (ADRESH<<8) | ADRESL;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+[; ;main.c: 91: while(ADCON0bits.GO);
 "91
-[e = _result -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[; ;main.c: 92: return result;
+[e $U 861  ]
+[e :U 862 ]
+[e :U 861 ]
+[e $ != -> . . _ADCON0bits 2 1 `i -> -> -> 0 `i `Vuc `i 862  ]
+[e :U 863 ]
+[; ;main.c: 92: result = (ADRESH<<8) | ADRESL;
 "92
-[e ) _result ]
-[e $UE 861  ]
-[; ;main.c: 93: }
+[e = _result -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[; ;main.c: 93: ADCON0bits.ADON = 0;
 "93
-[e :UE 861 ]
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 94: return result;
+"94
+[e ) _result ]
+[e $UE 860  ]
+[; ;main.c: 95: }
+"95
+[e :UE 860 ]
 }

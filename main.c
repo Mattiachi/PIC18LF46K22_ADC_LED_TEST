@@ -1,10 +1,15 @@
 /*
- * Object   :   RN2483 Blink
+ * Object   :   RN2483 Blink & ADC test
  * Author   :   Chiappalone Mattia
  * Date     :   August 2022
  * Device   :   PIC18LF46K22
  * Compiler :   XC8 2.40
  * MPLAB    :   MPLABX 3.40
+ * 
+ * Description: 
+ * This program blinks the green led once a second, then uses the ADC to read
+ * the voltage on the analog pins and outputs the result turning the orange led
+ * on for a number of milliseconds equals to the ADC reading (10 bits ADC)
  * 
  * 
  * RN2483 pin | PIC18LF46K22 pin |    Peripheral
@@ -54,7 +59,6 @@ void main (void){
 }
 
 void IO_pins_init(void){
-    
     //TRISx = 1 input ; TRISx = 0 output
     TRISCbits.TRISC5 = 0;       // Orange led
     TRISDbits.TRISD5 = 0;       // Green led

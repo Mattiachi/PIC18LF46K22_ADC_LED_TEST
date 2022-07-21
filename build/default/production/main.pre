@@ -9689,9 +9689,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
-# 27 "main.c"
+# 32 "main.c"
 void IO_pins_init(void);
-void blink(void);
 void ADC_init(void);
 void ADC_SelChannel(uint8_t c);
 uint16_t ADC_Read(uint8_t channel);
@@ -9703,7 +9702,11 @@ IO_pins_init();
 ADC_init();
 
 while(1){
-blink();
+PORTDbits.RD5 = 1;
+_delay((unsigned long)((1000)*((8000000)/4000.0)));
+PORTDbits.RD5 = 0;
+_delay((unsigned long)((1000)*((8000000)/4000.0)));
+
 temp = ADC_Read(27);
 light = ADC_Read(26);
 
@@ -9722,23 +9725,15 @@ TRISCbits.TRISC5 = 0;
 TRISDbits.TRISD5 = 0;
 TRISDbits.TRISD6 = 1;
 TRISDbits.TRISD7 = 1;
+
 ANSELCbits.ANSC5 = 0;
 ANSELDbits.ANSD5 = 0;
 ANSELDbits.ANSD6 = 1;
 ANSELDbits.ANSD7 = 1;
 }
 
-void blink(void){
-PORTDbits.RD5 = 1;
-_delay((unsigned long)((1000)*((8000000)/4000.0)));
-PORTDbits.RD5 = 0;
-_delay((unsigned long)((1000)*((8000000)/4000.0)));
-return;
-}
-
 void ADC_init(void){
 ADCON0bits.GO = 0;
-ADCON0bits.ADON = 1;
 ADCON2bits.ADFM = 1;
 ADCON2bits.ADCS = 3;
 return;
@@ -9751,9 +9746,11 @@ return;
 
 uint16_t ADC_Read(uint8_t channel){
 uint16_t result = 0;
+ADCON0bits.ADON = 1;
 ADC_SelChannel(channel);
 ADCON0bits.GO = 1;
 while(ADCON0bits.GO);
 result = (ADRESH<<8) | ADRESL;
+ADCON0bits.ADON = 0;
 return result;
 }
