@@ -52,14 +52,16 @@ void main (void){
 
 void IO_pins_init(void){
     
-    TRISCbits.TRISC5 = 0;   //TRISx = 1 input ; TRISx = 0 output
-    TRISDbits.TRISD5 = 0;
-    TRISDbits.TRISD6 = 1;   
-    TRISDbits.TRISD7 = 1;
-    ANSELCbits.ANSC5 = 0;  //ANSELx = 0 digital, ANSELx = 1 analog
-    ANSELDbits.ANSD5 = 0;
-    ANSELDbits.ANSD6 = 1;
-    ANSELDbits.ANSD7 = 1;
+    //TRISx = 1 input ; TRISx = 0 output
+    TRISCbits.TRISC5 = 0;       // Orange led
+    TRISDbits.TRISD5 = 0;       // Green led
+    TRISDbits.TRISD6 = 1;       // Light sensor
+    TRISDbits.TRISD7 = 1;       // Temperature sensor
+    //ANSELx = 0 digital, ANSELx = 1 analog
+    ANSELCbits.ANSC5 = 0;       // Orange led
+    ANSELDbits.ANSD5 = 0;       // Green led
+    ANSELDbits.ANSD6 = 1;       // Light sensor
+    ANSELDbits.ANSD7 = 1;       // Temperature sensor
 }   
 
 void blink(void){
