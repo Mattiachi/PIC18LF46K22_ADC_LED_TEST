@@ -25,7 +25,6 @@
 #define _XTAL_FREQ (8000000)
 
 void IO_pins_init(void);
-void blink(void);
 void ADC_init(void);
 void ADC_SelChannel(uint8_t c);
 uint16_t ADC_Read(uint8_t channel);
@@ -36,8 +35,12 @@ void main (void){
     IO_pins_init();
     ADC_init();
     
-    while(1){
-        blink();
+    while(1){        
+        LED_GREEN = 1;
+        __delay_ms(1000);
+        LED_GREEN = 0;
+        __delay_ms(1000);
+        
         temp = ADC_Read(TEMP);
         light = ADC_Read(LIGHT);
         
@@ -64,17 +67,8 @@ void IO_pins_init(void){
     ANSELDbits.ANSD7 = 1;       // Temperature sensor
 }   
 
-void blink(void){
-    LED_GREEN = 1;
-    __delay_ms(1000);
-    LED_GREEN = 0;
-    __delay_ms(1000);
-    return;
-}
-
 void ADC_init(void){
     ADCON0bits.GO = 0;   // starts conversion if set
-    ADCON0bits.ADON = 1; //enables ADC if set
     ADCON2bits.ADFM = 1; // right justified (MSB conversione sono il bit 1 di ADRESH e il LSB il bit 0 di ADRESL )
     ADCON2bits.ADCS = 3; // clock is derived from internal oscillator 
     return;
@@ -87,9 +81,11 @@ void ADC_SelChannel(uint8_t c){
 
 uint16_t ADC_Read(uint8_t channel){
     uint16_t result = 0;
+    ADCON0bits.ADON = 1;    //Turns on ADC
     ADC_SelChannel(channel);
     ADCON0bits.GO = 1;      //Starts conversion
     while(ADCON0bits.GO);
     result = (ADRESH<<8) | ADRESL;
+    ADCON0bits.ADON = 0;    //turns off ADC
     return result;
 }
