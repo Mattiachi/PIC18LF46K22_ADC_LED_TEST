@@ -9689,7 +9689,1160 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
-# 32 "main.c"
+# 200 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 212
+void PIN_MANAGER_IOC(void);
+
+# 225
+void IOCB4_ISR(void);
+
+# 248
+void IOCB4_SetInterruptHandler(void* InterruptHandler);
+
+# 272
+extern void (*IOCB4_InterruptHandler)(void);
+
+# 296
+void IOCB4_DefaultInterruptHandler(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 110 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
+
+# 122
+void INTERRUPT_Initialize (void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 94 "mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+
+# 125
+void TMR3_StartTimer(void);
+
+# 155
+void TMR3_StopTimer(void);
+
+# 189
+uint16_t TMR3_ReadTimer(void);
+
+# 215
+void TMR3_WriteTimer(uint16_t timerVal);
+
+# 247
+void TMR3_Reload(void);
+
+# 288
+void TMR3_StartSinglePulseAcquisition(void);
+
+# 329
+uint8_t TMR3_CheckGateValueStatus(void);
+
+# 345
+void TMR3_ISR(void);
+
+# 364
+void TMR3_CallBack(void);
+
+# 382
+void TMR3_SetInterruptHandler(void *InterruptHandler);
+
+# 400
+extern void (*TMR3_InterruptHandler)(void);
+
+# 418
+void TMR3_DefaultInterruptHandler(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 51 "mcc_generated_files/LoRaWAN/tmr_lora_addons.h"
+volatile uint8_t timerOverflow;
+volatile uint32_t ticksToScheduledInterrupt;
+volatile uint16_t reloadVal;
+volatile uint32_t ticksAdded;
+
+void TMR_ISR_lora(void);
+void TMR_ISR_Lora_Init(void);
+
+# 47 "mcc_generated_files/LoRaWAN/lorawan_init.h"
+void LORAWAN_PlatformInit(void);
+
+# 4 "C:\Program Files\Microchip\xc8\v2.40\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+# 73
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+# 85
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 104
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 6 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stddef.h"
+typedef int ptrdiff_t;
+
+# 14 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 60 "mcc_generated_files/LoRaWAN/lorawan.h"
+typedef enum
+{
+OK = 0,
+NETWORK_NOT_JOINED ,
+MAC_STATE_NOT_READY_FOR_TRANSMISSION ,
+INVALID_PARAMETER ,
+KEYS_NOT_INITIALIZED ,
+SILENT_IMMEDIATELY_ACTIVE ,
+FRAME_COUNTER_ERROR_REJOIN_NEEDED ,
+INVALID_BUFFER_LENGTH ,
+MAC_PAUSED ,
+NO_CHANNELS_FOUND ,
+INVALID_CLASS ,
+MCAST_PARAM_ERROR ,
+MCAST_MSG_ERROR ,
+} LorawanError_t;
+
+typedef enum
+{
+MAC_NOT_OK = 0,
+MAC_OK,
+RADIO_NOT_OK,
+RADIO_OK,
+INVALID_BUFFER_LEN,
+MCAST_RE_KEYING_NEEDED
+} OpStatus_t;
+
+typedef enum
+{
+OTAA = 0,
+ABP
+} ActivationType_t;
+
+typedef enum
+{
+UNCNF = 0,
+CNF
+} TransmissionType_t;
+
+typedef enum
+{
+ISM_EU868,
+ISM_EU433
+} IsmBand_t;
+
+typedef enum
+{
+CLASS_A = 0,
+CLASS_B,
+CLASS_C,
+} LoRaClass_t;
+
+typedef union
+{
+uint32_t value;
+struct
+{
+unsigned macState :4;
+unsigned networkJoined :1;
+unsigned automaticReply :1;
+unsigned adr :1;
+unsigned silentImmediately :1;
+unsigned macPause :1;
+unsigned rxDone :1;
+unsigned linkCheck :1;
+unsigned channelsModified :1;
+unsigned txPowerModified :1;
+unsigned nbRepModified :1;
+unsigned prescalerModified :1;
+unsigned secondReceiveWindowModified :1;
+unsigned rxTimingSetup :1;
+unsigned rejoinNeeded :1;
+unsigned mcastEnable :1;
+};
+} LorawanStatus_t;
+
+
+
+typedef struct
+{
+void (*RxAppData)(uint8_t* pData, uint8_t dataLength, OpStatus_t status);
+void (*RxJoinResponse)(bool status);
+} RxAppData_t;
+
+typedef void (*RxAppDataCb_t)(uint8_t* pData, uint8_t dataLength, OpStatus_t status);
+typedef void (*RxJoinResponseCb_t)(bool status);
+
+# 162
+void LORAWAN_Init(RxAppDataCb_t RxPayload, RxJoinResponseCb_t RxJoinResponse);
+
+# 177
+LorawanError_t LORAWAN_Join(ActivationType_t activationTypeNew);
+
+# 197
+LorawanError_t LORAWAN_Send (TransmissionType_t confirmed, uint8_t port, void *buffer, uint8_t bufferLength);
+
+# 212
+LorawanError_t LORAWAN_SetMcast(bool status);
+
+# 228
+bool LORAWAN_GetMcast(void);
+
+# 243
+void LORAWAN_SetMcastDeviceAddress (uint32_t mcastDeviceAddressNew);
+
+# 258
+uint32_t LORAWAN_GetMcastDeviceAddress (void);
+
+# 273
+void LORAWAN_SetMcastNetworkSessionKey (uint8_t *mcastNetworkSessionKeyNew);
+
+# 288
+void LORAWAN_GetMcastNetworkSessionKey (uint8_t *mcastNetworkSessionKey);
+
+# 303
+void LORAWAN_SetMcastApplicationSessionKey (uint8_t *mcastApplicationSessionKeyNew);
+
+# 318
+void LORAWAN_GetMcastApplicationSessionKey (uint8_t *mcastApplicationSessionKey);
+
+# 334
+void LORAWAN_SetDeviceEui (uint8_t *deviceEuiNew);
+
+# 350
+void LORAWAN_GetDeviceEui (uint8_t *deviceEui);
+
+# 366
+void LORAWAN_SetApplicationEui (uint8_t *applicationEuiNew);
+
+# 383
+void LORAWAN_GetApplicationEui (uint8_t *applicationEui);
+
+# 399
+void LORAWAN_SetDeviceAddress (uint32_t deviceAddressNew);
+
+# 415
+uint32_t LORAWAN_GetDeviceAddress (void);
+
+# 430
+void LORAWAN_SetClass (LoRaClass_t deviceClass);
+
+# 444
+LoRaClass_t LORAWAN_GetClass (void);
+
+# 458
+void LORAWAN_SetMcastDownCounter(uint32_t newCnt);
+
+# 472
+uint32_t LORAWAN_GetMcastDownCounter();
+
+# 489
+void LORAWAN_SetNetworkSessionKey (uint8_t *networkSessionKeyNew);
+
+# 506
+void LORAWAN_GetNetworkSessionKey (uint8_t *networkSessionKey);
+
+# 524
+void LORAWAN_SetApplicationSessionKey (uint8_t *applicationSessionKeyNew);
+
+# 542
+void LORAWAN_GetApplicationSessionKey (uint8_t *applicationSessionKey);
+
+# 558
+void LORAWAN_SetApplicationKey (uint8_t *applicationKeyNew);
+
+# 574
+void LORAWAN_GetApplicationKey (uint8_t *applicationKey);
+
+# 592
+void LORAWAN_SetAdr (bool status);
+
+# 613
+bool LORAWAN_GetAdr (void);
+
+# 631
+LorawanError_t LORAWAN_SetCurrentDataRate (uint8_t valueNew);
+
+# 649
+uint8_t LORAWAN_GetCurrentDataRate (void);
+
+# 666
+LorawanError_t LORAWAN_SetTxPower (uint8_t txPowerNew);
+
+# 683
+uint8_t LORAWAN_GetTxPower (void);
+
+# 699
+void LORAWAN_SetSyncWord (uint8_t syncWord);
+
+# 715
+uint8_t LORAWAN_GetSyncWord (void);
+
+# 731
+void LORAWAN_SetUplinkCounter (uint32_t ctr);
+
+# 747
+uint32_t LORAWAN_GetUplinkCounter (void);
+
+# 763
+void LORAWAN_SetDownlinkCounter (uint32_t ctr);
+
+# 779
+uint32_t LORAWAN_GetDownlinkCounter (void);
+
+# 796
+void LORAWAN_SetReceiveDelay1 (uint16_t receiveDelay1New);
+
+# 813
+uint16_t LORAWAN_GetReceiveDelay1 (void);
+
+# 830
+uint16_t LORAWAN_GetReceiveDelay2 (void);
+
+# 848
+void LORAWAN_SetJoinAcceptDelay1 (uint16_t joinAcceptDelay1New);
+
+# 866
+uint16_t LORAWAN_GetJoinAcceptDelay1 (void);
+
+# 884
+void LORAWAN_SetJoinAcceptDelay2 (uint16_t joinAcceptDelay2New);
+
+# 902
+uint16_t LORAWAN_GetJoinAcceptDelay2 (void);
+
+# 926
+void LORAWAN_SetMaxFcntGap (uint16_t maxFcntGapNew);
+
+# 946
+uint16_t LORAWAN_GetMaxFcntGap (void);
+
+# 966
+void LORAWAN_SetAdrAckLimit (uint8_t adrAckLimitNew);
+
+# 987
+uint8_t LORAWAN_GetAdrAckLimit (void);
+
+# 1007
+void LORAWAN_SetAdrAckDelay(uint8_t adrAckDelayNew);
+
+# 1027
+uint8_t LORAWAN_GetAdrAckDelay (void);
+
+# 1044
+void LORAWAN_SetAckTimeout(uint16_t ackTimeoutNew);
+
+# 1061
+uint16_t LORAWAN_GetAckTimeout (void);
+
+# 1078
+void LORAWAN_SetNumberOfRetransmissions (uint8_t numberRetransmissions);
+
+# 1094
+uint8_t LORAWAN_GetNumberOfRetransmissions (void);
+
+# 1111
+LorawanError_t LORAWAN_SetReceiveWindow2Parameters (uint32_t frequency, uint8_t dataRate);
+
+# 1129
+void LORAWAN_GetReceiveWindow2Parameters (uint32_t* frequency, uint8_t* dataRate);
+
+# 1147
+void LORAWAN_SetBattery (uint8_t batteryLevelNew);
+
+# 1164
+uint16_t LORAWAN_GetPrescaler (void);
+
+# 1182
+void LORAWAN_SetAutomaticReply (bool status);
+
+# 1200
+bool LORAWAN_GetAutomaticReply (void);
+
+# 1217
+uint32_t LORAWAN_GetStatus (void);
+
+# 1233
+uint8_t LORAWAN_GetLinkCheckMargin (void);
+
+# 1249
+uint8_t LORAWAN_GetLinkCheckGwCnt (void);
+
+# 1264
+uint32_t LORAWAN_GetFrequency (uint8_t channelId);
+
+# 1290
+LorawanError_t LORAWAN_SetDataRange (uint8_t channelId, uint8_t dataRangeNew);
+
+# 1306
+uint8_t LORAWAN_GetDataRange (uint8_t channelId);
+
+# 1322
+LorawanError_t LORAWAN_SetChannelIdStatus (uint8_t channelId, bool statusNew);
+
+# 1337
+bool LORAWAN_GetChannelIdStatus (uint8_t channelId);
+
+# 1357
+uint32_t LORAWAN_Pause (void);
+
+# 1373
+void LORAWAN_Resume (void);
+
+# 1392
+void LORAWAN_LinkCheckConfigure (uint16_t period);
+
+# 1410
+void LORAWAN_ForceEnable (void);
+
+# 1429
+void LORAWAN_Reset (IsmBand_t ismBandNew);
+
+# 1445
+LorawanError_t LORAWAN_SetFrequency (uint8_t channelId, uint32_t frequencyNew);
+
+# 1464
+LorawanError_t LORAWAN_SetDutyCycle (uint8_t channelId, uint16_t dutyCycleValue);
+
+# 1482
+uint16_t LORAWAN_GetDutyCycle (uint8_t channelId);
+
+# 1497
+uint8_t LORAWAN_GetIsmBand(void);
+
+# 1513
+uint8_t LORAWAN_GetState(void);
+
+# 1529
+void LORAWAN_Mainloop (void);
+
+# 110 "mcc_generated_files/LoRaWAN/lorawan_private.h"
+typedef union
+{
+uint8_t value;
+struct
+{
+unsigned nbRep:4;
+unsigned chMaskCntl:3;
+unsigned rfu:1;
+};
+} Redundancy_t;
+
+typedef enum
+{
+IDLE =0,
+TRANSMISSION_OCCURRING ,
+BEFORE_RX1 ,
+RX1_OPEN ,
+BETWEEN_RX1_RX2 ,
+RX2_OPEN ,
+RETRANSMISSION_DELAY ,
+ABP_DELAY ,
+CLASS_C_RX2_1_OPEN ,
+CLASS_C_RX2_2_OPEN ,
+} LoRaMacState_t;
+
+
+typedef enum
+{
+FRAME_TYPE_JOIN_REQ =0x00 ,
+FRAME_TYPE_JOIN_ACCEPT ,
+FRAME_TYPE_DATA_UNCONFIRMED_UP ,
+FRAME_TYPE_DATA_UNCONFIRMED_DOWN ,
+FRAME_TYPE_DATA_CONFIRMED_UP ,
+FRAME_TYPE_DATA_CONFIRMED_DOWN ,
+FRAME_TYPE_RFU ,
+FRAME_TYPE_PROPRIETARY ,
+}LoRaMacFrameType_t;
+
+
+typedef enum
+{
+LINK_CHECK_CID = 0x02,
+LINK_ADR_CID = 0x03,
+DUTY_CYCLE_CID = 0x04,
+RX2_SETUP_CID = 0x05,
+DEV_STATUS_CID = 0x06,
+NEW_CHANNEL_CID = 0x07,
+RX_TIMING_SETUP_CID = 0x08,
+}LoRaMacCid_t;
+
+
+typedef union
+{
+uint32_t value;
+uint8_t buffer[4];
+} DeviceAddress_t;
+
+typedef union
+{
+uint32_t value;
+struct
+{
+uint16_t valueLow;
+uint16_t valueHigh;
+} members;
+} FCnt_t;
+
+
+typedef union
+{
+uint8_t buffer[8];
+struct
+{
+uint32_t genericEuiL;
+uint32_t genericEuiH;
+}members;
+} GenericEui_t;
+
+typedef struct
+{
+ActivationType_t activationType;
+DeviceAddress_t deviceAddress;
+uint8_t networkSessionKey[16];
+uint8_t applicationSessionKey[16];
+uint8_t applicationKey[16];
+GenericEui_t applicationEui;
+GenericEui_t deviceEui;
+DeviceAddress_t mcastDeviceAddress;
+uint8_t mcastNetworkSessionKey[16];
+uint8_t mcastApplicationSessionKey[16];
+} ActivationParameters_t;
+
+typedef union
+{
+uint8_t value;
+struct
+{
+unsigned fOptsLen:4;
+unsigned fPending:1;
+unsigned ack:1;
+unsigned adrAckReq:1;
+unsigned adr:1;
+};
+} FCtrl_t;
+
+
+typedef union
+{
+uint8_t value;
+struct
+{
+uint8_t major : 2;
+uint8_t rfu : 3;
+uint8_t mType : 3;
+}bits;
+} Mhdr_t;
+
+typedef union
+{
+uint8_t fHdrCounter[23];
+struct
+{
+Mhdr_t mhdr ;
+DeviceAddress_t devAddr ;
+FCtrl_t fCtrl ;
+uint16_t fCnt ;
+uint8_t MacCommands[15] ;
+}members;
+} Hdr_t;
+
+typedef union
+{
+uint8_t value;
+struct
+{
+uint8_t rx2DataRate : 4;
+uint8_t rx1DROffset : 3;
+uint8_t rfu : 1;
+}bits;
+} DlSettings_t;
+
+
+typedef struct
+{
+uint16_t receiveDelay1 ;
+uint16_t receiveDelay2 ;
+uint16_t joinAcceptDelay1 ;
+uint16_t joinAcceptDelay2 ;
+uint16_t maxFcntGap ;
+uint16_t maxMultiFcntGap ;
+uint16_t ackTimeout ;
+uint8_t adrAckLimit ;
+uint8_t adrAckDelay ;
+} ProtocolParams_t;
+
+typedef struct
+{
+uint8_t receivedCid;
+unsigned channelMaskAck :1;
+unsigned dataRateAck :1;
+unsigned powerAck :1;
+unsigned channelAck :1;
+unsigned dataRateReceiveWindowAck :1;
+unsigned rx1DROffestAck :1;
+unsigned dataRateRangeAck :1;
+unsigned channelFrequencyAck :1;
+} LorawanCommands_t;
+
+typedef union
+{
+uint16_t value;
+struct
+{
+unsigned deviceEui: 1;
+unsigned applicationEui:1;
+unsigned deviceAddress: 1;
+unsigned applicationKey:1;
+unsigned networkSessionKey:1;
+unsigned applicationSessionKey:1;
+unsigned mcastApplicationSessionKey:1;
+unsigned mcastNetworkSessionKey:1;
+unsigned mcastDeviceAddress:1;
+};
+} LorawanMacKeys_t;
+
+typedef struct
+{
+uint32_t frequency;
+uint8_t dataRate;
+} ReceiveWindowParameters_t;
+
+
+typedef union
+{
+uint8_t value;
+struct
+{
+unsigned min:4;
+unsigned max:4;
+};
+} DataRange_t;
+
+extern uint8_t macBuffer[];
+extern uint8_t radioBuffer[];
+
+extern RxAppData_t rxPayload;
+
+
+
+
+void LORAWAN_ReceiveWindow1Callback (uint8_t param);
+
+reentrant void LORAWAN_ReceiveWindow2Callback (uint8_t param);
+
+void LORAWAN_LinkCheckCallback (uint8_t param);
+
+void AckRetransmissionCallback (uint8_t param);
+
+void UnconfirmedTransmissionCallback (uint8_t param);
+
+void AutomaticReplyCallback (uint8_t param);
+
+
+
+void UpdateCurrentDataRate (uint8_t valueNew);
+
+void UpdateTxPower (uint8_t txPowerNew);
+
+void UpdateRetransmissionAckTimeoutState (void);
+
+void UpdateJoinSuccessState(uint8_t param);
+
+void UpdateMinMaxChDataRate (void);
+
+void UpdateReceiveWindow2Parameters (uint32_t frequency, uint8_t dataRate);
+
+void UpdateDLSettings(uint8_t dlRx2Dr, uint8_t dlRx1DrOffset);
+
+LorawanError_t ValidateDataRate (uint8_t dataRate);
+
+LorawanError_t ValidateTxPower (uint8_t txPowerNew);
+
+
+
+void ResetParametersForConfirmedTransmission (void);
+
+void ResetParametersForUnconfirmedTransmission (void);
+
+void SetJoinFailState(void);
+
+uint16_t Random (uint16_t max);
+
+
+LorawanError_t SelectChannelForTransmission (bool transmissionType);
+
+void StartReTxTimer(void);
+
+LorawanError_t SearchAvailableChannel (uint8_t maxChannels, bool transmissionType, uint8_t* channelIndex);
+
+
+
+uint8_t* ExecuteDutyCycle (uint8_t *ptr);
+
+uint8_t* ExecuteLinkAdr (uint8_t *ptr);
+
+uint8_t* ExecuteDevStatus (uint8_t *ptr);
+
+uint8_t* ExecuteNewChannel (uint8_t *ptr);
+
+uint8_t* ExecuteRxParamSetupReq (uint8_t *ptr);
+
+void ConfigureRadio(uint8_t dataRate, uint32_t freq);
+
+uint32_t GetRx1Freq (void);
+
+void LORAWAN_EnterContinuousReceive(void);
+
+# 58 "mcc_generated_files/LoRaWAN/interrupt_manager_lora_addons.h"
+volatile uint8_t dioStatus;
+
+# 75
+uint8_t INTERRUPT_GetDioStatus(void);
+
+# 91
+uint8_t INTERRUPT_PeekDioStatus(void);
+
+void DIO0_ISR_Lora(void);
+void DIO1_ISR_Lora(void);
+void DIO2_ISR_Lora(void);
+void DIO3_ISR_Lora(void);
+void DIO4_ISR_Lora(void);
+void DIO5_ISR_Lora(void);
+
+# 55 "mcc_generated_files/LoRaWAN/radio_driver_SX1276.h"
+typedef enum
+{
+MODULATION_FSK = 0,
+MODULATION_LORA,
+} RadioModulation_t;
+
+typedef enum
+{
+CR_4_5 = 1,
+CR_4_6,
+CR_4_7,
+CR_4_8,
+} RadioErrorCodingRate_t;
+
+typedef enum
+{
+SF_7 = 7,
+SF_8,
+SF_9,
+SF_10,
+SF_11,
+SF_12,
+} RadioDataRate_t;
+
+typedef enum
+{
+BW_125KHZ = 7,
+BW_250KHZ,
+BW_500KHZ,
+} RadioLoRaBandWidth_t;
+
+typedef enum
+{
+FSK_SHAPING_NONE = 0,
+FSK_SHAPING_GAUSS_BT_1_0,
+FSK_SHAPING_GAUSS_BT_0_5,
+FSK_SHAPING_GAUSS_BT_0_3,
+} RadioFSKShaping_t;
+
+typedef enum
+{
+FSKBW_250_0KHZ = 1,
+FSKBW_125_0KHZ,
+FSKBW_62_5KHZ,
+FSKBW_31_3KHZ,
+FSKBW_15_6KHZ,
+FSKBW_7_8KHZ,
+FSKBW_3_9KHZ,
+FSKBW_INVALID_PADDING_0,
+FSKBW_200_0KHZ,
+FSKBW_100_0KHZ,
+FSKBW_50_0KHZ,
+FSKBW_25_0KHZ,
+FSKBW_12_5KHZ,
+FSKBW_6_3KHZ,
+FSKBW_3_1KHZ,
+FSKBW_INVALID_PADDING_1,
+FSKBW_166_7KHZ,
+FSKBW_83_3KHZ,
+FSKBW_41_7KHZ,
+FSKBW_20_8KHZ,
+FSKBW_10_4KHZ,
+FSKBW_5_2KHZ,
+FSKBW_2_6KHZ,
+} RadioFSKBandWidth_t;
+
+
+typedef enum
+{
+ERR_NO_DATA = -32767,
+ERR_DATA_SIZE,
+ERR_BUFFER_LOCKED,
+ERR_RADIO_BUSY,
+ERR_OUT_OF_RANGE,
+ERR_NONE = 0,
+} RadioError_t;
+
+# 140
+void RADIO_Init(uint8_t *radioBuffer, uint32_t frequency);
+void RADIO_SetLoRaSyncWord(uint8_t syncWord);
+uint8_t RADIO_GetLoRaSyncWord(void);
+
+RadioError_t RADIO_SetChannelFrequency(uint32_t frequency);
+uint32_t RADIO_GetChannelFrequency(void);
+
+void RADIO_SetChannelFrequencyDeviation(uint32_t frequencyDeviation);
+uint32_t RADIO_GetChannelFrequencyDeviation(void);
+
+void RADIO_SetPreambleLen(uint16_t preambleLen);
+uint16_t RADIO_GetPreambleLen(void);
+
+void RADIO_SetOutputPower(int8_t power);
+uint8_t RADIO_GetOutputPower(void);
+
+void RADIO_SetCRC(uint8_t crc);
+uint8_t RADIO_GetCRC(void);
+
+void RADIO_SetIQInverted(uint8_t iqInverted);
+uint8_t RADIO_GetIQInverted(void);
+
+void RADIO_SetBandwidth(RadioLoRaBandWidth_t bandwidth);
+RadioLoRaBandWidth_t RADIO_GetBandwidth(void);
+
+void RADIO_SetPABoost(uint8_t paBoost);
+uint8_t RADIO_GetPABoost(void);
+
+void RADIO_SetModulation(RadioModulation_t modulation);
+RadioModulation_t RADIO_GetModulation(void);
+
+void RADIO_SetFrequencyHopPeriod(uint16_t frequencyHopPeriod);
+uint8_t RADIO_GetFrequencyHopPeriod(void);
+void RADIO_SetFHSSChangeCallback(uint32_t (*fhssNextFrequency)(void));
+
+
+void RADIO_SetErrorCodingRate(RadioErrorCodingRate_t errorCodingRate);
+RadioErrorCodingRate_t RADIO_GetErrorCodingRate(void);
+void RADIO_SetWatchdogTimeout(uint32_t timeout);
+uint32_t RADIO_GetWatchdogTimeout(void);
+void RADIO_SetFSKBitRate(uint32_t bitRate);
+uint32_t RADIO_GetFSKBitRate(void);
+void RADIO_SetFSKDataShaping(RadioFSKShaping_t fskDataShaping);
+RadioFSKShaping_t RADIO_GetFSKDataShaping(void);
+void RADIO_SetFSKRxBw(RadioFSKBandWidth_t bw);
+RadioFSKBandWidth_t RADIO_GetFSKRxBw(void);
+void RADIO_SetFSKAFCBw(RadioFSKBandWidth_t bw);
+RadioFSKBandWidth_t RADIO_GetFSKAFCBw(void);
+void RADIO_SetFSKSyncWord(uint8_t syncWordLen, uint8_t* syncWord);
+uint8_t RADIO_GetFSKSyncWord(uint8_t* syncWord);
+
+
+RadioError_t RADIO_Transmit(uint8_t *buffer, uint8_t bufferLen);
+RadioError_t RADIO_TransmitCW(void);
+RadioError_t RADIO_StopCW(void);
+RadioError_t RADIO_ReceiveStart(uint16_t rxWindowSize);
+void RADIO_ReceiveStop(void);
+
+int8_t RADIO_GetMaxPower(void);
+
+void RADIO_DIO0(void);
+void RADIO_DIO1(void);
+void RADIO_DIO2(void);
+void RADIO_DIO3(void);
+void RADIO_DIO4(void);
+void RADIO_DIO5(void);
+
+uint8_t RADIO_GetStatus(void);
+
+RadioError_t RADIO_GetData(uint8_t *data, uint16_t *dataLen);
+void RADIO_ReleaseData(void);
+
+void RADIO_SetSpreadingFactor(RadioDataRate_t spreadingFactor);
+RadioDataRate_t RADIO_GetSpreadingFactor(void);
+
+uint16_t RADIO_ReadRandom(void);
+int8_t RADIO_GetPacketSnr(void);
+
+void RADIO_RegisterWrite(uint8_t reg, uint8_t value);
+uint8_t RADIO_RegisterRead(uint8_t reg);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 116 "mcc_generated_files/LoRaWAN/../spi2.h"
+void SPI2_Initialize(void);
+
+# 151
+uint8_t SPI2_Exchange8bit(uint8_t data);
+
+# 191
+uint8_t SPI2_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 214
+bool SPI2_IsBufferFull(void);
+
+# 239
+bool SPI2_HasWriteCollisionOccured(void);
+
+# 263
+void SPI2_ClearWriteCollisionStatus(void);
+
+# 55 "mcc_generated_files/LoRaWAN/radio_driver_hal.h"
+void HALResetPinMakeOutput(void);
+void HALResetPinMakeInput(void);
+void HALResetPinOutputValue(uint8_t value);
+
+void HALSPICSAssert(void);
+void HALSPICSDeassert(void);
+uint8_t HALSPISend(uint8_t data);
+uint8_t HALDIO0PinValue(void);
+uint8_t HALDIO1PinValue(void);
+uint8_t HALDIO2PinValue(void);
+uint8_t HALDIO5PinValue(void);
+
+# 562 "mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+
+# 584
+void INT1_ISR(void);
+
+# 608
+void INT1_CallBack(void);
+
+# 631
+void INT1_SetInterruptHandler(void* InterruptHandler);
+
+# 655
+extern void (*INT1_InterruptHandler)(void);
+
+# 679
+void INT1_DefaultInterruptHandler(void);
+
+# 697
+void INT2_ISR(void);
+
+# 721
+void INT2_CallBack(void);
+
+# 744
+void INT2_SetInterruptHandler(void* InterruptHandler);
+
+# 768
+extern void (*INT2_InterruptHandler)(void);
+
+# 792
+void INT2_DefaultInterruptHandler(void);
+
+# 810
+void INT0_ISR(void);
+
+# 834
+void INT0_CallBack(void);
+
+# 857
+void INT0_SetInterruptHandler(void* InterruptHandler);
+
+# 881
+extern void (*INT0_InterruptHandler)(void);
+
+# 905
+void INT0_DefaultInterruptHandler(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 71 "mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+# 76
+typedef struct
+{
+adc_result_t adcResult1;
+adc_result_t adcResult2;
+} adc_sync_double_result_t;
+
+# 94
+typedef enum
+{
+channel_AN26 = 0x1A,
+channel_CTMU = 0x1D,
+channel_DAC = 0x1E,
+channel_FVRBuf2 = 0x1F
+} adc_channel_t;
+
+# 135
+void ADC_Initialize(void);
+
+# 165
+void ADC_SelectChannel(adc_channel_t channel);
+
+# 192
+void ADC_StartConversion();
+
+# 224
+bool ADC_IsConversionDone();
+
+# 257
+adc_result_t ADC_GetConversionResult(void);
+
+# 287
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 94 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+
+# 125
+void TMR1_StartTimer(void);
+
+# 155
+void TMR1_StopTimer(void);
+
+# 189
+uint16_t TMR1_ReadTimer(void);
+
+# 215
+void TMR1_WriteTimer(uint16_t timerVal);
+
+# 247
+void TMR1_Reload(void);
+
+# 288
+void TMR1_StartSinglePulseAcquisition(void);
+
+# 329
+uint8_t TMR1_CheckGateValueStatus(void);
+
+# 345
+void TMR1_ISR(void);
+
+# 364
+void TMR1_CallBack(void);
+
+# 382
+void TMR1_SetInterruptHandler(void *InterruptHandler);
+
+# 400
+extern void (*TMR1_InterruptHandler)(void);
+
+# 418
+void TMR1_DefaultInterruptHandler(void);
+
+# 81 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+
+# 94
+void OSCILLATOR_Initialize(void);
+
+# 31 "main.c"
 void IO_pins_init(void);
 void ADC_init(void);
 void ADC_SelChannel(uint8_t c);
@@ -9703,9 +10856,9 @@ ADC_init();
 
 while(1){
 PORTDbits.RD5 = 1;
-_delay((unsigned long)((1000)*((8000000)/4000.0)));
+_delay((unsigned long)((1000)*(16000000/4000.0)));
 PORTDbits.RD5 = 0;
-_delay((unsigned long)((1000)*((8000000)/4000.0)));
+_delay((unsigned long)((1000)*(16000000/4000.0)));
 
 temp = ADC_Read(27);
 light = ADC_Read(26);
@@ -9713,7 +10866,7 @@ light = ADC_Read(26);
 
 PORTCbits.RC5 = 1;
 for (uint16_t time = 0; time < light; time++){
-_delay((unsigned long)((1)*((8000000)/4000.0)));
+_delay((unsigned long)((1)*(16000000/4000.0)));
 }
 PORTCbits.RC5 = 0;
 }

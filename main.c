@@ -19,15 +19,14 @@
  *    GPIO13  |     RD6 (AN26)   |    Light sensor
  */
 
-#include <xc.h>
-#include <stdint.h>
+#include "mcc_generated_files/mcc.h"
 
 
 #define LED_GREEN PORTDbits.RD5
 #define LED_ORANGE PORTCbits.RC5
 #define TEMP 27    //is the ADC channel of the pin 
 #define LIGHT 26
-#define _XTAL_FREQ (8000000)
+
 
 void IO_pins_init(void);
 void ADC_init(void);

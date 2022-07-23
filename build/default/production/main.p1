@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"32 main.c
+"31 main.c
 [v _IO_pins_init `(v ~T0 @X0 0 ef ]
-"33
+"32
 [v _ADC_init `(v ~T0 @X0 0 ef ]
 "7149 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18lf46k22.h
 [s S358 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -34,7 +34,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 C:\Program Files\Microchip\xc8\v2.40\pic\include\builtins.h
 [v __delay `JF38 ~T0 @X0 0 e ]
 [p i __delay ]
-"35 main.c
+"34 main.c
 [v _ADC_Read `(ui ~T0 @X0 0 ef1`uc ]
 "6842 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18lf46k22.h
 [s S350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -6735,198 +6735,892 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 158: __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
 [; ;pic18.h: 192: unsigned char __t1rd16on(void);
 [; ;pic18.h: 193: unsigned char __t3rd16on(void);
-[; ;main.c: 32: void IO_pins_init(void);
-[; ;main.c: 33: void ADC_init(void);
-[; ;main.c: 34: void ADC_SelChannel(uint8_t c);
-[; ;main.c: 35: uint16_t ADC_Read(uint8_t channel);
-"37 main.c
+[; ;pin_manager.h: 200: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 212: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 225: void IOCB4_ISR(void);
+[; ;pin_manager.h: 248: void IOCB4_SetInterruptHandler(void* InterruptHandler);
+[; ;pin_manager.h: 272: extern void (*IOCB4_InterruptHandler)(void);
+[; ;pin_manager.h: 296: void IOCB4_DefaultInterruptHandler(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
+[; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;tmr3.h: 94: void TMR3_Initialize(void);
+[; ;tmr3.h: 125: void TMR3_StartTimer(void);
+[; ;tmr3.h: 155: void TMR3_StopTimer(void);
+[; ;tmr3.h: 189: uint16_t TMR3_ReadTimer(void);
+[; ;tmr3.h: 215: void TMR3_WriteTimer(uint16_t timerVal);
+[; ;tmr3.h: 247: void TMR3_Reload(void);
+[; ;tmr3.h: 288: void TMR3_StartSinglePulseAcquisition(void);
+[; ;tmr3.h: 329: uint8_t TMR3_CheckGateValueStatus(void);
+[; ;tmr3.h: 345: void TMR3_ISR(void);
+[; ;tmr3.h: 364: void TMR3_CallBack(void);
+[; ;tmr3.h: 382: void TMR3_SetInterruptHandler(void *InterruptHandler);
+[; ;tmr3.h: 400: extern void (*TMR3_InterruptHandler)(void);
+[; ;tmr3.h: 418: void TMR3_DefaultInterruptHandler(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+"51 mcc_generated_files/LoRaWAN/tmr_lora_addons.h
+[v _timerOverflow `Vuc ~T0 @X0 1 e ]
+[; ;tmr_lora_addons.h: 51: volatile uint8_t timerOverflow;
+"52
+[v _ticksToScheduledInterrupt `Vul ~T0 @X0 1 e ]
+[; ;tmr_lora_addons.h: 52: volatile uint32_t ticksToScheduledInterrupt;
+"53
+[v _reloadVal `Vui ~T0 @X0 1 e ]
+[; ;tmr_lora_addons.h: 53: volatile uint16_t reloadVal;
+"54
+[v _ticksAdded `Vul ~T0 @X0 1 e ]
+[; ;tmr_lora_addons.h: 54: volatile uint32_t ticksAdded;
+[; ;tmr_lora_addons.h: 56: void TMR_ISR_lora(void);
+[; ;tmr_lora_addons.h: 57: void TMR_ISR_Lora_Init(void);
+[; ;lorawan_init.h: 47: void LORAWAN_PlatformInit(void);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 65: extern double atof(const char *);
+[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 67: extern int atoi(const char *);
+[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 69: extern long atol(const char *);
+[; ;stdlib.h: 73: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 75: extern int rand(void);
+[; ;stdlib.h: 76: extern void srand(unsigned int);
+[; ;stdlib.h: 77: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 78: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 79: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 80: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 81: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 85: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 86: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 87: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 88: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 93: extern void * malloc(size_t);
+[; ;stdlib.h: 94: extern void free(void *);
+[; ;stdlib.h: 95: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 104: extern int atexit(void (*)(void));
+[; ;stdlib.h: 105: extern char * getenv(const char *);
+[; ;stdlib.h: 106: extern char ** environ;
+[; ;stdlib.h: 107: extern int system(char *);
+[; ;stdlib.h: 108: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 109: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 110: extern int abs(int);
+[; ;stdlib.h: 111: extern long labs(long);
+[; ;stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 114: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 119: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 120: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 122: extern char * ftoa(float f, int * status);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 16: extern void * memset(void *, int, size_t);
+[; ;string.h: 36: extern char * strcat(char *, const char *);
+[; ;string.h: 37: extern char * strcpy(char *, const char *);
+[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 40: extern char * strdup(const char *);
+[; ;string.h: 41: extern char * strtok(char *, const char *);
+[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 45: extern int strcmp(const char *, const char *);
+[; ;string.h: 46: extern int stricmp(const char *, const char *);
+[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 52: extern size_t strspn(const char *, const char *);
+[; ;string.h: 53: extern char * strstr(const char *, const char *);
+[; ;string.h: 54: extern char * stristr(const char *, const char *);
+[; ;string.h: 55: extern char * strerror(int);
+[; ;string.h: 56: extern size_t strlen(const char *);
+[; ;string.h: 57: extern char * strchr(const char *, int);
+[; ;string.h: 58: extern char * strichr(const char *, int);
+[; ;string.h: 59: extern char * strrchr(const char *, int);
+[; ;string.h: 60: extern char * strrichr(const char *, int);
+[; ;lorawan.h: 60: typedef enum
+[; ;lorawan.h: 61: {
+[; ;lorawan.h: 62: OK = 0,
+[; ;lorawan.h: 63: NETWORK_NOT_JOINED ,
+[; ;lorawan.h: 64: MAC_STATE_NOT_READY_FOR_TRANSMISSION ,
+[; ;lorawan.h: 65: INVALID_PARAMETER ,
+[; ;lorawan.h: 66: KEYS_NOT_INITIALIZED ,
+[; ;lorawan.h: 67: SILENT_IMMEDIATELY_ACTIVE ,
+[; ;lorawan.h: 68: FRAME_COUNTER_ERROR_REJOIN_NEEDED ,
+[; ;lorawan.h: 69: INVALID_BUFFER_LENGTH ,
+[; ;lorawan.h: 70: MAC_PAUSED ,
+[; ;lorawan.h: 71: NO_CHANNELS_FOUND ,
+[; ;lorawan.h: 72: INVALID_CLASS ,
+[; ;lorawan.h: 73: MCAST_PARAM_ERROR ,
+[; ;lorawan.h: 74: MCAST_MSG_ERROR ,
+[; ;lorawan.h: 75: } LorawanError_t;
+[; ;lorawan.h: 77: typedef enum
+[; ;lorawan.h: 78: {
+[; ;lorawan.h: 79: MAC_NOT_OK = 0,
+[; ;lorawan.h: 80: MAC_OK,
+[; ;lorawan.h: 81: RADIO_NOT_OK,
+[; ;lorawan.h: 82: RADIO_OK,
+[; ;lorawan.h: 83: INVALID_BUFFER_LEN,
+[; ;lorawan.h: 84: MCAST_RE_KEYING_NEEDED
+[; ;lorawan.h: 85: } OpStatus_t;
+[; ;lorawan.h: 87: typedef enum
+[; ;lorawan.h: 88: {
+[; ;lorawan.h: 89: OTAA = 0,
+[; ;lorawan.h: 90: ABP
+[; ;lorawan.h: 91: } ActivationType_t;
+[; ;lorawan.h: 93: typedef enum
+[; ;lorawan.h: 94: {
+[; ;lorawan.h: 95: UNCNF = 0,
+[; ;lorawan.h: 96: CNF
+[; ;lorawan.h: 97: } TransmissionType_t;
+[; ;lorawan.h: 99: typedef enum
+[; ;lorawan.h: 100: {
+[; ;lorawan.h: 101: ISM_EU868,
+[; ;lorawan.h: 102: ISM_EU433
+[; ;lorawan.h: 103: } IsmBand_t;
+[; ;lorawan.h: 105: typedef enum
+[; ;lorawan.h: 106: {
+[; ;lorawan.h: 107: CLASS_A = 0,
+[; ;lorawan.h: 108: CLASS_B,
+[; ;lorawan.h: 109: CLASS_C,
+[; ;lorawan.h: 110: } LoRaClass_t;
+[; ;lorawan.h: 112: typedef union
+[; ;lorawan.h: 113: {
+[; ;lorawan.h: 114: uint32_t value;
+[; ;lorawan.h: 115: struct
+[; ;lorawan.h: 116: {
+[; ;lorawan.h: 117: unsigned macState :4;
+[; ;lorawan.h: 118: unsigned networkJoined :1;
+[; ;lorawan.h: 119: unsigned automaticReply :1;
+[; ;lorawan.h: 120: unsigned adr :1;
+[; ;lorawan.h: 121: unsigned silentImmediately :1;
+[; ;lorawan.h: 122: unsigned macPause :1;
+[; ;lorawan.h: 123: unsigned rxDone :1;
+[; ;lorawan.h: 124: unsigned linkCheck :1;
+[; ;lorawan.h: 125: unsigned channelsModified :1;
+[; ;lorawan.h: 126: unsigned txPowerModified :1;
+[; ;lorawan.h: 127: unsigned nbRepModified :1;
+[; ;lorawan.h: 128: unsigned prescalerModified :1;
+[; ;lorawan.h: 129: unsigned secondReceiveWindowModified :1;
+[; ;lorawan.h: 130: unsigned rxTimingSetup :1;
+[; ;lorawan.h: 131: unsigned rejoinNeeded :1;
+[; ;lorawan.h: 132: unsigned mcastEnable :1;
+[; ;lorawan.h: 133: };
+[; ;lorawan.h: 134: } LorawanStatus_t;
+[; ;lorawan.h: 138: typedef struct
+[; ;lorawan.h: 139: {
+[; ;lorawan.h: 140: void (*RxAppData)(uint8_t* pData, uint8_t dataLength, OpStatus_t status);
+[; ;lorawan.h: 141: void (*RxJoinResponse)(bool status);
+[; ;lorawan.h: 142: } RxAppData_t;
+[; ;lorawan.h: 144: typedef void (*RxAppDataCb_t)(uint8_t* pData, uint8_t dataLength, OpStatus_t status);
+[; ;lorawan.h: 145: typedef void (*RxJoinResponseCb_t)(bool status);
+[; ;lorawan.h: 162: void LORAWAN_Init(RxAppDataCb_t RxPayload, RxJoinResponseCb_t RxJoinResponse);
+[; ;lorawan.h: 177: LorawanError_t LORAWAN_Join(ActivationType_t activationTypeNew);
+[; ;lorawan.h: 197: LorawanError_t LORAWAN_Send (TransmissionType_t confirmed, uint8_t port, void *buffer, uint8_t bufferLength);
+[; ;lorawan.h: 212: LorawanError_t LORAWAN_SetMcast(bool status);
+[; ;lorawan.h: 228: bool LORAWAN_GetMcast(void);
+[; ;lorawan.h: 243: void LORAWAN_SetMcastDeviceAddress (uint32_t mcastDeviceAddressNew);
+[; ;lorawan.h: 258: uint32_t LORAWAN_GetMcastDeviceAddress (void);
+[; ;lorawan.h: 273: void LORAWAN_SetMcastNetworkSessionKey (uint8_t *mcastNetworkSessionKeyNew);
+[; ;lorawan.h: 288: void LORAWAN_GetMcastNetworkSessionKey (uint8_t *mcastNetworkSessionKey);
+[; ;lorawan.h: 303: void LORAWAN_SetMcastApplicationSessionKey (uint8_t *mcastApplicationSessionKeyNew);
+[; ;lorawan.h: 318: void LORAWAN_GetMcastApplicationSessionKey (uint8_t *mcastApplicationSessionKey);
+[; ;lorawan.h: 334: void LORAWAN_SetDeviceEui (uint8_t *deviceEuiNew);
+[; ;lorawan.h: 350: void LORAWAN_GetDeviceEui (uint8_t *deviceEui);
+[; ;lorawan.h: 366: void LORAWAN_SetApplicationEui (uint8_t *applicationEuiNew);
+[; ;lorawan.h: 383: void LORAWAN_GetApplicationEui (uint8_t *applicationEui);
+[; ;lorawan.h: 399: void LORAWAN_SetDeviceAddress (uint32_t deviceAddressNew);
+[; ;lorawan.h: 415: uint32_t LORAWAN_GetDeviceAddress (void);
+[; ;lorawan.h: 430: void LORAWAN_SetClass (LoRaClass_t deviceClass);
+[; ;lorawan.h: 444: LoRaClass_t LORAWAN_GetClass (void);
+[; ;lorawan.h: 458: void LORAWAN_SetMcastDownCounter(uint32_t newCnt);
+[; ;lorawan.h: 472: uint32_t LORAWAN_GetMcastDownCounter();
+[; ;lorawan.h: 489: void LORAWAN_SetNetworkSessionKey (uint8_t *networkSessionKeyNew);
+[; ;lorawan.h: 506: void LORAWAN_GetNetworkSessionKey (uint8_t *networkSessionKey);
+[; ;lorawan.h: 524: void LORAWAN_SetApplicationSessionKey (uint8_t *applicationSessionKeyNew);
+[; ;lorawan.h: 542: void LORAWAN_GetApplicationSessionKey (uint8_t *applicationSessionKey);
+[; ;lorawan.h: 558: void LORAWAN_SetApplicationKey (uint8_t *applicationKeyNew);
+[; ;lorawan.h: 574: void LORAWAN_GetApplicationKey (uint8_t *applicationKey);
+[; ;lorawan.h: 592: void LORAWAN_SetAdr (bool status);
+[; ;lorawan.h: 613: bool LORAWAN_GetAdr (void);
+[; ;lorawan.h: 631: LorawanError_t LORAWAN_SetCurrentDataRate (uint8_t valueNew);
+[; ;lorawan.h: 649: uint8_t LORAWAN_GetCurrentDataRate (void);
+[; ;lorawan.h: 666: LorawanError_t LORAWAN_SetTxPower (uint8_t txPowerNew);
+[; ;lorawan.h: 683: uint8_t LORAWAN_GetTxPower (void);
+[; ;lorawan.h: 699: void LORAWAN_SetSyncWord (uint8_t syncWord);
+[; ;lorawan.h: 715: uint8_t LORAWAN_GetSyncWord (void);
+[; ;lorawan.h: 731: void LORAWAN_SetUplinkCounter (uint32_t ctr);
+[; ;lorawan.h: 747: uint32_t LORAWAN_GetUplinkCounter (void);
+[; ;lorawan.h: 763: void LORAWAN_SetDownlinkCounter (uint32_t ctr);
+[; ;lorawan.h: 779: uint32_t LORAWAN_GetDownlinkCounter (void);
+[; ;lorawan.h: 796: void LORAWAN_SetReceiveDelay1 (uint16_t receiveDelay1New);
+[; ;lorawan.h: 813: uint16_t LORAWAN_GetReceiveDelay1 (void);
+[; ;lorawan.h: 830: uint16_t LORAWAN_GetReceiveDelay2 (void);
+[; ;lorawan.h: 848: void LORAWAN_SetJoinAcceptDelay1 (uint16_t joinAcceptDelay1New);
+[; ;lorawan.h: 866: uint16_t LORAWAN_GetJoinAcceptDelay1 (void);
+[; ;lorawan.h: 884: void LORAWAN_SetJoinAcceptDelay2 (uint16_t joinAcceptDelay2New);
+[; ;lorawan.h: 902: uint16_t LORAWAN_GetJoinAcceptDelay2 (void);
+[; ;lorawan.h: 926: void LORAWAN_SetMaxFcntGap (uint16_t maxFcntGapNew);
+[; ;lorawan.h: 946: uint16_t LORAWAN_GetMaxFcntGap (void);
+[; ;lorawan.h: 966: void LORAWAN_SetAdrAckLimit (uint8_t adrAckLimitNew);
+[; ;lorawan.h: 987: uint8_t LORAWAN_GetAdrAckLimit (void);
+[; ;lorawan.h: 1007: void LORAWAN_SetAdrAckDelay(uint8_t adrAckDelayNew);
+[; ;lorawan.h: 1027: uint8_t LORAWAN_GetAdrAckDelay (void);
+[; ;lorawan.h: 1044: void LORAWAN_SetAckTimeout(uint16_t ackTimeoutNew);
+[; ;lorawan.h: 1061: uint16_t LORAWAN_GetAckTimeout (void);
+[; ;lorawan.h: 1078: void LORAWAN_SetNumberOfRetransmissions (uint8_t numberRetransmissions);
+[; ;lorawan.h: 1094: uint8_t LORAWAN_GetNumberOfRetransmissions (void);
+[; ;lorawan.h: 1111: LorawanError_t LORAWAN_SetReceiveWindow2Parameters (uint32_t frequency, uint8_t dataRate);
+[; ;lorawan.h: 1129: void LORAWAN_GetReceiveWindow2Parameters (uint32_t* frequency, uint8_t* dataRate);
+[; ;lorawan.h: 1147: void LORAWAN_SetBattery (uint8_t batteryLevelNew);
+[; ;lorawan.h: 1164: uint16_t LORAWAN_GetPrescaler (void);
+[; ;lorawan.h: 1182: void LORAWAN_SetAutomaticReply (bool status);
+[; ;lorawan.h: 1200: bool LORAWAN_GetAutomaticReply (void);
+[; ;lorawan.h: 1217: uint32_t LORAWAN_GetStatus (void);
+[; ;lorawan.h: 1233: uint8_t LORAWAN_GetLinkCheckMargin (void);
+[; ;lorawan.h: 1249: uint8_t LORAWAN_GetLinkCheckGwCnt (void);
+[; ;lorawan.h: 1264: uint32_t LORAWAN_GetFrequency (uint8_t channelId);
+[; ;lorawan.h: 1290: LorawanError_t LORAWAN_SetDataRange (uint8_t channelId, uint8_t dataRangeNew);
+[; ;lorawan.h: 1306: uint8_t LORAWAN_GetDataRange (uint8_t channelId);
+[; ;lorawan.h: 1322: LorawanError_t LORAWAN_SetChannelIdStatus (uint8_t channelId, bool statusNew);
+[; ;lorawan.h: 1337: bool LORAWAN_GetChannelIdStatus (uint8_t channelId);
+[; ;lorawan.h: 1357: uint32_t LORAWAN_Pause (void);
+[; ;lorawan.h: 1373: void LORAWAN_Resume (void);
+[; ;lorawan.h: 1392: void LORAWAN_LinkCheckConfigure (uint16_t period);
+[; ;lorawan.h: 1410: void LORAWAN_ForceEnable (void);
+[; ;lorawan.h: 1429: void LORAWAN_Reset (IsmBand_t ismBandNew);
+[; ;lorawan.h: 1445: LorawanError_t LORAWAN_SetFrequency (uint8_t channelId, uint32_t frequencyNew);
+[; ;lorawan.h: 1464: LorawanError_t LORAWAN_SetDutyCycle (uint8_t channelId, uint16_t dutyCycleValue);
+[; ;lorawan.h: 1482: uint16_t LORAWAN_GetDutyCycle (uint8_t channelId);
+[; ;lorawan.h: 1497: uint8_t LORAWAN_GetIsmBand(void);
+[; ;lorawan.h: 1513: uint8_t LORAWAN_GetState(void);
+[; ;lorawan.h: 1529: void LORAWAN_Mainloop (void);
+[; ;lorawan_private.h: 110: typedef union
+[; ;lorawan_private.h: 111: {
+[; ;lorawan_private.h: 112: uint8_t value;
+[; ;lorawan_private.h: 113: struct
+[; ;lorawan_private.h: 114: {
+[; ;lorawan_private.h: 115: unsigned nbRep:4;
+[; ;lorawan_private.h: 116: unsigned chMaskCntl:3;
+[; ;lorawan_private.h: 117: unsigned rfu:1;
+[; ;lorawan_private.h: 118: };
+[; ;lorawan_private.h: 119: } Redundancy_t;
+[; ;lorawan_private.h: 121: typedef enum
+[; ;lorawan_private.h: 122: {
+[; ;lorawan_private.h: 123: IDLE =0,
+[; ;lorawan_private.h: 124: TRANSMISSION_OCCURRING ,
+[; ;lorawan_private.h: 125: BEFORE_RX1 ,
+[; ;lorawan_private.h: 126: RX1_OPEN ,
+[; ;lorawan_private.h: 127: BETWEEN_RX1_RX2 ,
+[; ;lorawan_private.h: 128: RX2_OPEN ,
+[; ;lorawan_private.h: 129: RETRANSMISSION_DELAY ,
+[; ;lorawan_private.h: 130: ABP_DELAY ,
+[; ;lorawan_private.h: 131: CLASS_C_RX2_1_OPEN ,
+[; ;lorawan_private.h: 132: CLASS_C_RX2_2_OPEN ,
+[; ;lorawan_private.h: 133: } LoRaMacState_t;
+[; ;lorawan_private.h: 136: typedef enum
+[; ;lorawan_private.h: 137: {
+[; ;lorawan_private.h: 138: FRAME_TYPE_JOIN_REQ =0x00 ,
+[; ;lorawan_private.h: 139: FRAME_TYPE_JOIN_ACCEPT ,
+[; ;lorawan_private.h: 140: FRAME_TYPE_DATA_UNCONFIRMED_UP ,
+[; ;lorawan_private.h: 141: FRAME_TYPE_DATA_UNCONFIRMED_DOWN ,
+[; ;lorawan_private.h: 142: FRAME_TYPE_DATA_CONFIRMED_UP ,
+[; ;lorawan_private.h: 143: FRAME_TYPE_DATA_CONFIRMED_DOWN ,
+[; ;lorawan_private.h: 144: FRAME_TYPE_RFU ,
+[; ;lorawan_private.h: 145: FRAME_TYPE_PROPRIETARY ,
+[; ;lorawan_private.h: 146: }LoRaMacFrameType_t;
+[; ;lorawan_private.h: 149: typedef enum
+[; ;lorawan_private.h: 150: {
+[; ;lorawan_private.h: 151: LINK_CHECK_CID = 0x02,
+[; ;lorawan_private.h: 152: LINK_ADR_CID = 0x03,
+[; ;lorawan_private.h: 153: DUTY_CYCLE_CID = 0x04,
+[; ;lorawan_private.h: 154: RX2_SETUP_CID = 0x05,
+[; ;lorawan_private.h: 155: DEV_STATUS_CID = 0x06,
+[; ;lorawan_private.h: 156: NEW_CHANNEL_CID = 0x07,
+[; ;lorawan_private.h: 157: RX_TIMING_SETUP_CID = 0x08,
+[; ;lorawan_private.h: 158: }LoRaMacCid_t;
+[; ;lorawan_private.h: 161: typedef union
+[; ;lorawan_private.h: 162: {
+[; ;lorawan_private.h: 163: uint32_t value;
+[; ;lorawan_private.h: 164: uint8_t buffer[4];
+[; ;lorawan_private.h: 165: } DeviceAddress_t;
+[; ;lorawan_private.h: 167: typedef union
+[; ;lorawan_private.h: 168: {
+[; ;lorawan_private.h: 169: uint32_t value;
+[; ;lorawan_private.h: 170: struct
+[; ;lorawan_private.h: 171: {
+[; ;lorawan_private.h: 172: uint16_t valueLow;
+[; ;lorawan_private.h: 173: uint16_t valueHigh;
+[; ;lorawan_private.h: 174: } members;
+[; ;lorawan_private.h: 175: } FCnt_t;
+[; ;lorawan_private.h: 178: typedef union
+[; ;lorawan_private.h: 179: {
+[; ;lorawan_private.h: 180: uint8_t buffer[8];
+[; ;lorawan_private.h: 181: struct
+[; ;lorawan_private.h: 182: {
+[; ;lorawan_private.h: 183: uint32_t genericEuiL;
+[; ;lorawan_private.h: 184: uint32_t genericEuiH;
+[; ;lorawan_private.h: 185: }members;
+[; ;lorawan_private.h: 186: } GenericEui_t;
+[; ;lorawan_private.h: 188: typedef struct
+[; ;lorawan_private.h: 189: {
+[; ;lorawan_private.h: 190: ActivationType_t activationType;
+[; ;lorawan_private.h: 191: DeviceAddress_t deviceAddress;
+[; ;lorawan_private.h: 192: uint8_t networkSessionKey[16];
+[; ;lorawan_private.h: 193: uint8_t applicationSessionKey[16];
+[; ;lorawan_private.h: 194: uint8_t applicationKey[16];
+[; ;lorawan_private.h: 195: GenericEui_t applicationEui;
+[; ;lorawan_private.h: 196: GenericEui_t deviceEui;
+[; ;lorawan_private.h: 197: DeviceAddress_t mcastDeviceAddress;
+[; ;lorawan_private.h: 198: uint8_t mcastNetworkSessionKey[16];
+[; ;lorawan_private.h: 199: uint8_t mcastApplicationSessionKey[16];
+[; ;lorawan_private.h: 200: } ActivationParameters_t;
+[; ;lorawan_private.h: 202: typedef union
+[; ;lorawan_private.h: 203: {
+[; ;lorawan_private.h: 204: uint8_t value;
+[; ;lorawan_private.h: 205: struct
+[; ;lorawan_private.h: 206: {
+[; ;lorawan_private.h: 207: unsigned fOptsLen:4;
+[; ;lorawan_private.h: 208: unsigned fPending:1;
+[; ;lorawan_private.h: 209: unsigned ack:1;
+[; ;lorawan_private.h: 210: unsigned adrAckReq:1;
+[; ;lorawan_private.h: 211: unsigned adr:1;
+[; ;lorawan_private.h: 212: };
+[; ;lorawan_private.h: 213: } FCtrl_t;
+[; ;lorawan_private.h: 216: typedef union
+[; ;lorawan_private.h: 217: {
+[; ;lorawan_private.h: 218: uint8_t value;
+[; ;lorawan_private.h: 219: struct
+[; ;lorawan_private.h: 220: {
+[; ;lorawan_private.h: 221: uint8_t major : 2;
+[; ;lorawan_private.h: 222: uint8_t rfu : 3;
+[; ;lorawan_private.h: 223: uint8_t mType : 3;
+[; ;lorawan_private.h: 224: }bits;
+[; ;lorawan_private.h: 225: } Mhdr_t;
+[; ;lorawan_private.h: 227: typedef union
+[; ;lorawan_private.h: 228: {
+[; ;lorawan_private.h: 229: uint8_t fHdrCounter[23];
+[; ;lorawan_private.h: 230: struct
+[; ;lorawan_private.h: 231: {
+[; ;lorawan_private.h: 232: Mhdr_t mhdr ;
+[; ;lorawan_private.h: 233: DeviceAddress_t devAddr ;
+[; ;lorawan_private.h: 234: FCtrl_t fCtrl ;
+[; ;lorawan_private.h: 235: uint16_t fCnt ;
+[; ;lorawan_private.h: 236: uint8_t MacCommands[15] ;
+[; ;lorawan_private.h: 237: }members;
+[; ;lorawan_private.h: 238: } Hdr_t;
+[; ;lorawan_private.h: 240: typedef union
+[; ;lorawan_private.h: 241: {
+[; ;lorawan_private.h: 242: uint8_t value;
+[; ;lorawan_private.h: 243: struct
+[; ;lorawan_private.h: 244: {
+[; ;lorawan_private.h: 245: uint8_t rx2DataRate : 4;
+[; ;lorawan_private.h: 246: uint8_t rx1DROffset : 3;
+[; ;lorawan_private.h: 247: uint8_t rfu : 1;
+[; ;lorawan_private.h: 248: }bits;
+[; ;lorawan_private.h: 249: } DlSettings_t;
+[; ;lorawan_private.h: 252: typedef struct
+[; ;lorawan_private.h: 253: {
+[; ;lorawan_private.h: 254: uint16_t receiveDelay1 ;
+[; ;lorawan_private.h: 255: uint16_t receiveDelay2 ;
+[; ;lorawan_private.h: 256: uint16_t joinAcceptDelay1 ;
+[; ;lorawan_private.h: 257: uint16_t joinAcceptDelay2 ;
+[; ;lorawan_private.h: 258: uint16_t maxFcntGap ;
+[; ;lorawan_private.h: 259: uint16_t maxMultiFcntGap ;
+[; ;lorawan_private.h: 260: uint16_t ackTimeout ;
+[; ;lorawan_private.h: 261: uint8_t adrAckLimit ;
+[; ;lorawan_private.h: 262: uint8_t adrAckDelay ;
+[; ;lorawan_private.h: 263: } ProtocolParams_t;
+[; ;lorawan_private.h: 265: typedef struct
+[; ;lorawan_private.h: 266: {
+[; ;lorawan_private.h: 267: uint8_t receivedCid;
+[; ;lorawan_private.h: 268: unsigned channelMaskAck :1;
+[; ;lorawan_private.h: 269: unsigned dataRateAck :1;
+[; ;lorawan_private.h: 270: unsigned powerAck :1;
+[; ;lorawan_private.h: 271: unsigned channelAck :1;
+[; ;lorawan_private.h: 272: unsigned dataRateReceiveWindowAck :1;
+[; ;lorawan_private.h: 273: unsigned rx1DROffestAck :1;
+[; ;lorawan_private.h: 274: unsigned dataRateRangeAck :1;
+[; ;lorawan_private.h: 275: unsigned channelFrequencyAck :1;
+[; ;lorawan_private.h: 276: } LorawanCommands_t;
+[; ;lorawan_private.h: 278: typedef union
+[; ;lorawan_private.h: 279: {
+[; ;lorawan_private.h: 280: uint16_t value;
+[; ;lorawan_private.h: 281: struct
+[; ;lorawan_private.h: 282: {
+[; ;lorawan_private.h: 283: unsigned deviceEui: 1;
+[; ;lorawan_private.h: 284: unsigned applicationEui:1;
+[; ;lorawan_private.h: 285: unsigned deviceAddress: 1;
+[; ;lorawan_private.h: 286: unsigned applicationKey:1;
+[; ;lorawan_private.h: 287: unsigned networkSessionKey:1;
+[; ;lorawan_private.h: 288: unsigned applicationSessionKey:1;
+[; ;lorawan_private.h: 289: unsigned mcastApplicationSessionKey:1;
+[; ;lorawan_private.h: 290: unsigned mcastNetworkSessionKey:1;
+[; ;lorawan_private.h: 291: unsigned mcastDeviceAddress:1;
+[; ;lorawan_private.h: 292: };
+[; ;lorawan_private.h: 293: } LorawanMacKeys_t;
+[; ;lorawan_private.h: 295: typedef struct
+[; ;lorawan_private.h: 296: {
+[; ;lorawan_private.h: 297: uint32_t frequency;
+[; ;lorawan_private.h: 298: uint8_t dataRate;
+[; ;lorawan_private.h: 299: } ReceiveWindowParameters_t;
+[; ;lorawan_private.h: 302: typedef union
+[; ;lorawan_private.h: 303: {
+[; ;lorawan_private.h: 304: uint8_t value;
+[; ;lorawan_private.h: 305: struct
+[; ;lorawan_private.h: 306: {
+[; ;lorawan_private.h: 307: unsigned min:4;
+[; ;lorawan_private.h: 308: unsigned max:4;
+[; ;lorawan_private.h: 309: };
+[; ;lorawan_private.h: 310: } DataRange_t;
+[; ;lorawan_private.h: 312: extern uint8_t macBuffer[];
+[; ;lorawan_private.h: 313: extern uint8_t radioBuffer[];
+[; ;lorawan_private.h: 315: extern RxAppData_t rxPayload;
+[; ;lorawan_private.h: 320: void LORAWAN_ReceiveWindow1Callback (uint8_t param);
+[; ;lorawan_private.h: 322: reentrant void LORAWAN_ReceiveWindow2Callback (uint8_t param);
+[; ;lorawan_private.h: 324: void LORAWAN_LinkCheckCallback (uint8_t param);
+[; ;lorawan_private.h: 326: void AckRetransmissionCallback (uint8_t param);
+[; ;lorawan_private.h: 328: void UnconfirmedTransmissionCallback (uint8_t param);
+[; ;lorawan_private.h: 330: void AutomaticReplyCallback (uint8_t param);
+[; ;lorawan_private.h: 334: void UpdateCurrentDataRate (uint8_t valueNew);
+[; ;lorawan_private.h: 336: void UpdateTxPower (uint8_t txPowerNew);
+[; ;lorawan_private.h: 338: void UpdateRetransmissionAckTimeoutState (void);
+[; ;lorawan_private.h: 340: void UpdateJoinSuccessState(uint8_t param);
+[; ;lorawan_private.h: 342: void UpdateMinMaxChDataRate (void);
+[; ;lorawan_private.h: 344: void UpdateReceiveWindow2Parameters (uint32_t frequency, uint8_t dataRate);
+[; ;lorawan_private.h: 346: void UpdateDLSettings(uint8_t dlRx2Dr, uint8_t dlRx1DrOffset);
+[; ;lorawan_private.h: 348: LorawanError_t ValidateDataRate (uint8_t dataRate);
+[; ;lorawan_private.h: 350: LorawanError_t ValidateTxPower (uint8_t txPowerNew);
+[; ;lorawan_private.h: 354: void ResetParametersForConfirmedTransmission (void);
+[; ;lorawan_private.h: 356: void ResetParametersForUnconfirmedTransmission (void);
+[; ;lorawan_private.h: 358: void SetJoinFailState(void);
+[; ;lorawan_private.h: 360: uint16_t Random (uint16_t max);
+[; ;lorawan_private.h: 363: LorawanError_t SelectChannelForTransmission (bool transmissionType);
+[; ;lorawan_private.h: 365: void StartReTxTimer(void);
+[; ;lorawan_private.h: 367: LorawanError_t SearchAvailableChannel (uint8_t maxChannels, bool transmissionType, uint8_t* channelIndex);
+[; ;lorawan_private.h: 371: uint8_t* ExecuteDutyCycle (uint8_t *ptr);
+[; ;lorawan_private.h: 373: uint8_t* ExecuteLinkAdr (uint8_t *ptr);
+[; ;lorawan_private.h: 375: uint8_t* ExecuteDevStatus (uint8_t *ptr);
+[; ;lorawan_private.h: 377: uint8_t* ExecuteNewChannel (uint8_t *ptr);
+[; ;lorawan_private.h: 379: uint8_t* ExecuteRxParamSetupReq (uint8_t *ptr);
+[; ;lorawan_private.h: 381: void ConfigureRadio(uint8_t dataRate, uint32_t freq);
+[; ;lorawan_private.h: 383: uint32_t GetRx1Freq (void);
+[; ;lorawan_private.h: 385: void LORAWAN_EnterContinuousReceive(void);
+"58 mcc_generated_files/LoRaWAN/interrupt_manager_lora_addons.h
+[v _dioStatus `Vuc ~T0 @X0 1 e ]
+[; ;interrupt_manager_lora_addons.h: 58: volatile uint8_t dioStatus;
+[; ;interrupt_manager_lora_addons.h: 75: uint8_t INTERRUPT_GetDioStatus(void);
+[; ;interrupt_manager_lora_addons.h: 91: uint8_t INTERRUPT_PeekDioStatus(void);
+[; ;interrupt_manager_lora_addons.h: 93: void DIO0_ISR_Lora(void);
+[; ;interrupt_manager_lora_addons.h: 94: void DIO1_ISR_Lora(void);
+[; ;interrupt_manager_lora_addons.h: 95: void DIO2_ISR_Lora(void);
+[; ;interrupt_manager_lora_addons.h: 96: void DIO3_ISR_Lora(void);
+[; ;interrupt_manager_lora_addons.h: 97: void DIO4_ISR_Lora(void);
+[; ;interrupt_manager_lora_addons.h: 98: void DIO5_ISR_Lora(void);
+[; ;radio_driver_SX1276.h: 55: typedef enum
+[; ;radio_driver_SX1276.h: 56: {
+[; ;radio_driver_SX1276.h: 57: MODULATION_FSK = 0,
+[; ;radio_driver_SX1276.h: 58: MODULATION_LORA,
+[; ;radio_driver_SX1276.h: 59: } RadioModulation_t;
+[; ;radio_driver_SX1276.h: 61: typedef enum
+[; ;radio_driver_SX1276.h: 62: {
+[; ;radio_driver_SX1276.h: 63: CR_4_5 = 1,
+[; ;radio_driver_SX1276.h: 64: CR_4_6,
+[; ;radio_driver_SX1276.h: 65: CR_4_7,
+[; ;radio_driver_SX1276.h: 66: CR_4_8,
+[; ;radio_driver_SX1276.h: 67: } RadioErrorCodingRate_t;
+[; ;radio_driver_SX1276.h: 69: typedef enum
+[; ;radio_driver_SX1276.h: 70: {
+[; ;radio_driver_SX1276.h: 71: SF_7 = 7,
+[; ;radio_driver_SX1276.h: 72: SF_8,
+[; ;radio_driver_SX1276.h: 73: SF_9,
+[; ;radio_driver_SX1276.h: 74: SF_10,
+[; ;radio_driver_SX1276.h: 75: SF_11,
+[; ;radio_driver_SX1276.h: 76: SF_12,
+[; ;radio_driver_SX1276.h: 77: } RadioDataRate_t;
+[; ;radio_driver_SX1276.h: 79: typedef enum
+[; ;radio_driver_SX1276.h: 80: {
+[; ;radio_driver_SX1276.h: 81: BW_125KHZ = 7,
+[; ;radio_driver_SX1276.h: 82: BW_250KHZ,
+[; ;radio_driver_SX1276.h: 83: BW_500KHZ,
+[; ;radio_driver_SX1276.h: 84: } RadioLoRaBandWidth_t;
+[; ;radio_driver_SX1276.h: 86: typedef enum
+[; ;radio_driver_SX1276.h: 87: {
+[; ;radio_driver_SX1276.h: 88: FSK_SHAPING_NONE = 0,
+[; ;radio_driver_SX1276.h: 89: FSK_SHAPING_GAUSS_BT_1_0,
+[; ;radio_driver_SX1276.h: 90: FSK_SHAPING_GAUSS_BT_0_5,
+[; ;radio_driver_SX1276.h: 91: FSK_SHAPING_GAUSS_BT_0_3,
+[; ;radio_driver_SX1276.h: 92: } RadioFSKShaping_t;
+[; ;radio_driver_SX1276.h: 94: typedef enum
+[; ;radio_driver_SX1276.h: 95: {
+[; ;radio_driver_SX1276.h: 96: FSKBW_250_0KHZ = 1,
+[; ;radio_driver_SX1276.h: 97: FSKBW_125_0KHZ,
+[; ;radio_driver_SX1276.h: 98: FSKBW_62_5KHZ,
+[; ;radio_driver_SX1276.h: 99: FSKBW_31_3KHZ,
+[; ;radio_driver_SX1276.h: 100: FSKBW_15_6KHZ,
+[; ;radio_driver_SX1276.h: 101: FSKBW_7_8KHZ,
+[; ;radio_driver_SX1276.h: 102: FSKBW_3_9KHZ,
+[; ;radio_driver_SX1276.h: 103: FSKBW_INVALID_PADDING_0,
+[; ;radio_driver_SX1276.h: 104: FSKBW_200_0KHZ,
+[; ;radio_driver_SX1276.h: 105: FSKBW_100_0KHZ,
+[; ;radio_driver_SX1276.h: 106: FSKBW_50_0KHZ,
+[; ;radio_driver_SX1276.h: 107: FSKBW_25_0KHZ,
+[; ;radio_driver_SX1276.h: 108: FSKBW_12_5KHZ,
+[; ;radio_driver_SX1276.h: 109: FSKBW_6_3KHZ,
+[; ;radio_driver_SX1276.h: 110: FSKBW_3_1KHZ,
+[; ;radio_driver_SX1276.h: 111: FSKBW_INVALID_PADDING_1,
+[; ;radio_driver_SX1276.h: 112: FSKBW_166_7KHZ,
+[; ;radio_driver_SX1276.h: 113: FSKBW_83_3KHZ,
+[; ;radio_driver_SX1276.h: 114: FSKBW_41_7KHZ,
+[; ;radio_driver_SX1276.h: 115: FSKBW_20_8KHZ,
+[; ;radio_driver_SX1276.h: 116: FSKBW_10_4KHZ,
+[; ;radio_driver_SX1276.h: 117: FSKBW_5_2KHZ,
+[; ;radio_driver_SX1276.h: 118: FSKBW_2_6KHZ,
+[; ;radio_driver_SX1276.h: 119: } RadioFSKBandWidth_t;
+[; ;radio_driver_SX1276.h: 122: typedef enum
+[; ;radio_driver_SX1276.h: 123: {
+[; ;radio_driver_SX1276.h: 124: ERR_NO_DATA = -32767,
+[; ;radio_driver_SX1276.h: 125: ERR_DATA_SIZE,
+[; ;radio_driver_SX1276.h: 126: ERR_BUFFER_LOCKED,
+[; ;radio_driver_SX1276.h: 127: ERR_RADIO_BUSY,
+[; ;radio_driver_SX1276.h: 128: ERR_OUT_OF_RANGE,
+[; ;radio_driver_SX1276.h: 129: ERR_NONE = 0,
+[; ;radio_driver_SX1276.h: 130: } RadioError_t;
+[; ;radio_driver_SX1276.h: 140: void RADIO_Init(uint8_t *radioBuffer, uint32_t frequency);
+[; ;radio_driver_SX1276.h: 141: void RADIO_SetLoRaSyncWord(uint8_t syncWord);
+[; ;radio_driver_SX1276.h: 142: uint8_t RADIO_GetLoRaSyncWord(void);
+[; ;radio_driver_SX1276.h: 144: RadioError_t RADIO_SetChannelFrequency(uint32_t frequency);
+[; ;radio_driver_SX1276.h: 145: uint32_t RADIO_GetChannelFrequency(void);
+[; ;radio_driver_SX1276.h: 147: void RADIO_SetChannelFrequencyDeviation(uint32_t frequencyDeviation);
+[; ;radio_driver_SX1276.h: 148: uint32_t RADIO_GetChannelFrequencyDeviation(void);
+[; ;radio_driver_SX1276.h: 150: void RADIO_SetPreambleLen(uint16_t preambleLen);
+[; ;radio_driver_SX1276.h: 151: uint16_t RADIO_GetPreambleLen(void);
+[; ;radio_driver_SX1276.h: 153: void RADIO_SetOutputPower(int8_t power);
+[; ;radio_driver_SX1276.h: 154: uint8_t RADIO_GetOutputPower(void);
+[; ;radio_driver_SX1276.h: 156: void RADIO_SetCRC(uint8_t crc);
+[; ;radio_driver_SX1276.h: 157: uint8_t RADIO_GetCRC(void);
+[; ;radio_driver_SX1276.h: 159: void RADIO_SetIQInverted(uint8_t iqInverted);
+[; ;radio_driver_SX1276.h: 160: uint8_t RADIO_GetIQInverted(void);
+[; ;radio_driver_SX1276.h: 162: void RADIO_SetBandwidth(RadioLoRaBandWidth_t bandwidth);
+[; ;radio_driver_SX1276.h: 163: RadioLoRaBandWidth_t RADIO_GetBandwidth(void);
+[; ;radio_driver_SX1276.h: 165: void RADIO_SetPABoost(uint8_t paBoost);
+[; ;radio_driver_SX1276.h: 166: uint8_t RADIO_GetPABoost(void);
+[; ;radio_driver_SX1276.h: 168: void RADIO_SetModulation(RadioModulation_t modulation);
+[; ;radio_driver_SX1276.h: 169: RadioModulation_t RADIO_GetModulation(void);
+[; ;radio_driver_SX1276.h: 171: void RADIO_SetFrequencyHopPeriod(uint16_t frequencyHopPeriod);
+[; ;radio_driver_SX1276.h: 172: uint8_t RADIO_GetFrequencyHopPeriod(void);
+[; ;radio_driver_SX1276.h: 173: void RADIO_SetFHSSChangeCallback(uint32_t (*fhssNextFrequency)(void));
+[; ;radio_driver_SX1276.h: 176: void RADIO_SetErrorCodingRate(RadioErrorCodingRate_t errorCodingRate);
+[; ;radio_driver_SX1276.h: 177: RadioErrorCodingRate_t RADIO_GetErrorCodingRate(void);
+[; ;radio_driver_SX1276.h: 178: void RADIO_SetWatchdogTimeout(uint32_t timeout);
+[; ;radio_driver_SX1276.h: 179: uint32_t RADIO_GetWatchdogTimeout(void);
+[; ;radio_driver_SX1276.h: 180: void RADIO_SetFSKBitRate(uint32_t bitRate);
+[; ;radio_driver_SX1276.h: 181: uint32_t RADIO_GetFSKBitRate(void);
+[; ;radio_driver_SX1276.h: 182: void RADIO_SetFSKDataShaping(RadioFSKShaping_t fskDataShaping);
+[; ;radio_driver_SX1276.h: 183: RadioFSKShaping_t RADIO_GetFSKDataShaping(void);
+[; ;radio_driver_SX1276.h: 184: void RADIO_SetFSKRxBw(RadioFSKBandWidth_t bw);
+[; ;radio_driver_SX1276.h: 185: RadioFSKBandWidth_t RADIO_GetFSKRxBw(void);
+[; ;radio_driver_SX1276.h: 186: void RADIO_SetFSKAFCBw(RadioFSKBandWidth_t bw);
+[; ;radio_driver_SX1276.h: 187: RadioFSKBandWidth_t RADIO_GetFSKAFCBw(void);
+[; ;radio_driver_SX1276.h: 188: void RADIO_SetFSKSyncWord(uint8_t syncWordLen, uint8_t* syncWord);
+[; ;radio_driver_SX1276.h: 189: uint8_t RADIO_GetFSKSyncWord(uint8_t* syncWord);
+[; ;radio_driver_SX1276.h: 192: RadioError_t RADIO_Transmit(uint8_t *buffer, uint8_t bufferLen);
+[; ;radio_driver_SX1276.h: 193: RadioError_t RADIO_TransmitCW(void);
+[; ;radio_driver_SX1276.h: 194: RadioError_t RADIO_StopCW(void);
+[; ;radio_driver_SX1276.h: 195: RadioError_t RADIO_ReceiveStart(uint16_t rxWindowSize);
+[; ;radio_driver_SX1276.h: 196: void RADIO_ReceiveStop(void);
+[; ;radio_driver_SX1276.h: 198: int8_t RADIO_GetMaxPower(void);
+[; ;radio_driver_SX1276.h: 200: void RADIO_DIO0(void);
+[; ;radio_driver_SX1276.h: 201: void RADIO_DIO1(void);
+[; ;radio_driver_SX1276.h: 202: void RADIO_DIO2(void);
+[; ;radio_driver_SX1276.h: 203: void RADIO_DIO3(void);
+[; ;radio_driver_SX1276.h: 204: void RADIO_DIO4(void);
+[; ;radio_driver_SX1276.h: 205: void RADIO_DIO5(void);
+[; ;radio_driver_SX1276.h: 207: uint8_t RADIO_GetStatus(void);
+[; ;radio_driver_SX1276.h: 209: RadioError_t RADIO_GetData(uint8_t *data, uint16_t *dataLen);
+[; ;radio_driver_SX1276.h: 210: void RADIO_ReleaseData(void);
+[; ;radio_driver_SX1276.h: 212: void RADIO_SetSpreadingFactor(RadioDataRate_t spreadingFactor);
+[; ;radio_driver_SX1276.h: 213: RadioDataRate_t RADIO_GetSpreadingFactor(void);
+[; ;radio_driver_SX1276.h: 215: uint16_t RADIO_ReadRandom(void);
+[; ;radio_driver_SX1276.h: 216: int8_t RADIO_GetPacketSnr(void);
+[; ;radio_driver_SX1276.h: 218: void RADIO_RegisterWrite(uint8_t reg, uint8_t value);
+[; ;radio_driver_SX1276.h: 219: uint8_t RADIO_RegisterRead(uint8_t reg);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;spi2.h: 116: void SPI2_Initialize(void);
+[; ;spi2.h: 151: uint8_t SPI2_Exchange8bit(uint8_t data);
+[; ;spi2.h: 191: uint8_t SPI2_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi2.h: 214: bool SPI2_IsBufferFull(void);
+[; ;spi2.h: 239: bool SPI2_HasWriteCollisionOccured(void);
+[; ;spi2.h: 263: void SPI2_ClearWriteCollisionStatus(void);
+[; ;radio_driver_hal.h: 55: void HALResetPinMakeOutput(void);
+[; ;radio_driver_hal.h: 56: void HALResetPinMakeInput(void);
+[; ;radio_driver_hal.h: 57: void HALResetPinOutputValue(uint8_t value);
+[; ;radio_driver_hal.h: 59: void HALSPICSAssert(void);
+[; ;radio_driver_hal.h: 60: void HALSPICSDeassert(void);
+[; ;radio_driver_hal.h: 61: uint8_t HALSPISend(uint8_t data);
+[; ;radio_driver_hal.h: 62: uint8_t HALDIO0PinValue(void);
+[; ;radio_driver_hal.h: 63: uint8_t HALDIO1PinValue(void);
+[; ;radio_driver_hal.h: 64: uint8_t HALDIO2PinValue(void);
+[; ;radio_driver_hal.h: 65: uint8_t HALDIO5PinValue(void);
+[; ;ext_int.h: 562: void EXT_INT_Initialize(void);
+[; ;ext_int.h: 584: void INT1_ISR(void);
+[; ;ext_int.h: 608: void INT1_CallBack(void);
+[; ;ext_int.h: 631: void INT1_SetInterruptHandler(void* InterruptHandler);
+[; ;ext_int.h: 655: extern void (*INT1_InterruptHandler)(void);
+[; ;ext_int.h: 679: void INT1_DefaultInterruptHandler(void);
+[; ;ext_int.h: 697: void INT2_ISR(void);
+[; ;ext_int.h: 721: void INT2_CallBack(void);
+[; ;ext_int.h: 744: void INT2_SetInterruptHandler(void* InterruptHandler);
+[; ;ext_int.h: 768: extern void (*INT2_InterruptHandler)(void);
+[; ;ext_int.h: 792: void INT2_DefaultInterruptHandler(void);
+[; ;ext_int.h: 810: void INT0_ISR(void);
+[; ;ext_int.h: 834: void INT0_CallBack(void);
+[; ;ext_int.h: 857: void INT0_SetInterruptHandler(void* InterruptHandler);
+[; ;ext_int.h: 881: extern void (*INT0_InterruptHandler)(void);
+[; ;ext_int.h: 905: void INT0_DefaultInterruptHandler(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;adc.h: 71: typedef uint16_t adc_result_t;
+[; ;adc.h: 76: typedef struct
+[; ;adc.h: 77: {
+[; ;adc.h: 78: adc_result_t adcResult1;
+[; ;adc.h: 79: adc_result_t adcResult2;
+[; ;adc.h: 80: } adc_sync_double_result_t;
+[; ;adc.h: 94: typedef enum
+[; ;adc.h: 95: {
+[; ;adc.h: 96: channel_AN26 = 0x1A,
+[; ;adc.h: 97: channel_CTMU = 0x1D,
+[; ;adc.h: 98: channel_DAC = 0x1E,
+[; ;adc.h: 99: channel_FVRBuf2 = 0x1F
+[; ;adc.h: 100: } adc_channel_t;
+[; ;adc.h: 135: void ADC_Initialize(void);
+[; ;adc.h: 165: void ADC_SelectChannel(adc_channel_t channel);
+[; ;adc.h: 192: void ADC_StartConversion();
+[; ;adc.h: 224: bool ADC_IsConversionDone();
+[; ;adc.h: 257: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 287: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;tmr1.h: 94: void TMR1_Initialize(void);
+[; ;tmr1.h: 125: void TMR1_StartTimer(void);
+[; ;tmr1.h: 155: void TMR1_StopTimer(void);
+[; ;tmr1.h: 189: uint16_t TMR1_ReadTimer(void);
+[; ;tmr1.h: 215: void TMR1_WriteTimer(uint16_t timerVal);
+[; ;tmr1.h: 247: void TMR1_Reload(void);
+[; ;tmr1.h: 288: void TMR1_StartSinglePulseAcquisition(void);
+[; ;tmr1.h: 329: uint8_t TMR1_CheckGateValueStatus(void);
+[; ;tmr1.h: 345: void TMR1_ISR(void);
+[; ;tmr1.h: 364: void TMR1_CallBack(void);
+[; ;tmr1.h: 382: void TMR1_SetInterruptHandler(void *InterruptHandler);
+[; ;tmr1.h: 400: extern void (*TMR1_InterruptHandler)(void);
+[; ;tmr1.h: 418: void TMR1_DefaultInterruptHandler(void);
+[; ;mcc.h: 81: void SYSTEM_Initialize(void);
+[; ;mcc.h: 94: void OSCILLATOR_Initialize(void);
+[; ;main.c: 31: void IO_pins_init(void);
+[; ;main.c: 32: void ADC_init(void);
+[; ;main.c: 33: void ADC_SelChannel(uint8_t c);
+[; ;main.c: 34: uint16_t ADC_Read(uint8_t channel);
+"36 main.c
 [v _temp `ui ~T0 @X0 1 e ]
 [v _light `ui ~T0 @X0 1 e ]
-[; ;main.c: 37: uint16_t temp, light;
+[; ;main.c: 36: uint16_t temp, light;
 [v $root$_main `(v ~T0 @X0 0 e ]
-"39
+"38
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 39: void main (void){
+[; ;main.c: 38: void main (void){
 [e :U _main ]
 [f ]
-[; ;main.c: 40: IO_pins_init();
-"40
+[; ;main.c: 39: IO_pins_init();
+"39
 [e ( _IO_pins_init ..  ]
-[; ;main.c: 41: ADC_init();
-"41
+[; ;main.c: 40: ADC_init();
+"40
 [e ( _ADC_init ..  ]
-[; ;main.c: 43: while(1){
-"43
-[e :U 851 ]
+[; ;main.c: 42: while(1){
+"42
+[e :U 882 ]
 {
-[; ;main.c: 44: PORTDbits.RD5 = 1;
-"44
+[; ;main.c: 43: PORTDbits.RD5 = 1;
+"43
 [e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 45: _delay((unsigned long)((1000)*((8000000)/4000.0)));
+[; ;main.c: 44: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"44
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 45: PORTDbits.RD5 = 0;
 "45
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 46: PORTDbits.RD5 = 0;
-"46
 [e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 47: _delay((unsigned long)((1000)*((8000000)/4000.0)));
-"47
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 49: temp = ADC_Read(27);
-"49
+[; ;main.c: 46: _delay((unsigned long)((1000)*(16000000/4000.0)));
+"46
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 48: temp = ADC_Read(27);
+"48
 [e = _temp ( _ADC_Read (1 -> -> 27 `i `uc ]
-[; ;main.c: 50: light = ADC_Read(26);
-"50
+[; ;main.c: 49: light = ADC_Read(26);
+"49
 [e = _light ( _ADC_Read (1 -> -> 26 `i `uc ]
-[; ;main.c: 53: PORTCbits.RC5 = 1;
-"53
+[; ;main.c: 52: PORTCbits.RC5 = 1;
+"52
 [e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 54: for (uint16_t time = 0; time < light; time++){
-"54
+[; ;main.c: 53: for (uint16_t time = 0; time < light; time++){
+"53
 {
 [v _time `ui ~T0 @X0 1 a ]
 [e = _time -> -> 0 `i `ui ]
-[e $U 856  ]
-[e :U 853 ]
+[e $U 887  ]
+[e :U 884 ]
 {
-[; ;main.c: 55: _delay((unsigned long)((1)*((8000000)/4000.0)));
-"55
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"56
-}
+[; ;main.c: 54: _delay((unsigned long)((1)*(16000000/4000.0)));
 "54
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"55
+}
+"53
 [e ++ _time -> -> 1 `i `ui ]
-[e :U 856 ]
-[e $ < _time _light 853  ]
-[e :U 854 ]
+[e :U 887 ]
+[e $ < _time _light 884  ]
+[e :U 885 ]
+"55
+}
+[; ;main.c: 55: }
+[; ;main.c: 56: PORTCbits.RC5 = 0;
 "56
-}
-[; ;main.c: 56: }
-[; ;main.c: 57: PORTCbits.RC5 = 0;
-"57
 [e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
-"58
+"57
 }
-[e :U 850 ]
-"43
-[e $U 851  ]
-[e :U 852 ]
+[e :U 881 ]
+"42
+[e $U 882  ]
+[e :U 883 ]
+[; ;main.c: 57: }
 [; ;main.c: 58: }
-[; ;main.c: 59: }
-"59
-[e :UE 849 ]
+"58
+[e :UE 880 ]
 }
-"61
+"60
 [v _IO_pins_init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 61: void IO_pins_init(void){
+[; ;main.c: 60: void IO_pins_init(void){
 [e :U _IO_pins_init ]
 [f ]
-[; ;main.c: 63: TRISCbits.TRISC5 = 0;
-"63
+[; ;main.c: 62: TRISCbits.TRISC5 = 0;
+"62
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 64: TRISDbits.TRISD5 = 0;
-"64
+[; ;main.c: 63: TRISDbits.TRISD5 = 0;
+"63
 [e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 65: TRISDbits.TRISD6 = 1;
-"65
+[; ;main.c: 64: TRISDbits.TRISD6 = 1;
+"64
 [e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 66: TRISDbits.TRISD7 = 1;
-"66
+[; ;main.c: 65: TRISDbits.TRISD7 = 1;
+"65
 [e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 68: ANSELCbits.ANSC5 = 0;
-"68
+[; ;main.c: 67: ANSELCbits.ANSC5 = 0;
+"67
 [e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 69: ANSELDbits.ANSD5 = 0;
-"69
+[; ;main.c: 68: ANSELDbits.ANSD5 = 0;
+"68
 [e = . . _ANSELDbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 70: ANSELDbits.ANSD6 = 1;
-"70
+[; ;main.c: 69: ANSELDbits.ANSD6 = 1;
+"69
 [e = . . _ANSELDbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 71: ANSELDbits.ANSD7 = 1;
-"71
+[; ;main.c: 70: ANSELDbits.ANSD7 = 1;
+"70
 [e = . . _ANSELDbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 72: }
-"72
-[e :UE 857 ]
+[; ;main.c: 71: }
+"71
+[e :UE 888 ]
 }
-"74
+"73
 [v _ADC_init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 74: void ADC_init(void){
+[; ;main.c: 73: void ADC_init(void){
 [e :U _ADC_init ]
 [f ]
-[; ;main.c: 75: ADCON0bits.GO = 0;
-"75
+[; ;main.c: 74: ADCON0bits.GO = 0;
+"74
 [e = . . _ADCON0bits 2 1 -> -> 0 `i `uc ]
-[; ;main.c: 76: ADCON2bits.ADFM = 1;
-"76
+[; ;main.c: 75: ADCON2bits.ADFM = 1;
+"75
 [e = . . _ADCON2bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 77: ADCON2bits.ADCS = 3;
-"77
+[; ;main.c: 76: ADCON2bits.ADCS = 3;
+"76
 [e = . . _ADCON2bits 0 0 -> -> 3 `i `uc ]
-[; ;main.c: 78: return;
+[; ;main.c: 77: return;
+"77
+[e $UE 889  ]
+[; ;main.c: 78: }
 "78
-[e $UE 858  ]
-[; ;main.c: 79: }
-"79
-[e :UE 858 ]
+[e :UE 889 ]
 }
-"81
+"80
 [v _ADC_SelChannel `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 81: void ADC_SelChannel(uint8_t c){
+[; ;main.c: 80: void ADC_SelChannel(uint8_t c){
 [e :U _ADC_SelChannel ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 82: ADCON0bits.CHS = c;
-"82
+[; ;main.c: 81: ADCON0bits.CHS = c;
+"81
 [e = . . _ADCON0bits 1 2 _c ]
-[; ;main.c: 83: return;
+[; ;main.c: 82: return;
+"82
+[e $UE 890  ]
+[; ;main.c: 83: }
 "83
-[e $UE 859  ]
-[; ;main.c: 84: }
-"84
-[e :UE 859 ]
+[e :UE 890 ]
 }
-"86
+"85
 [v _ADC_Read `(ui ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 86: uint16_t ADC_Read(uint8_t channel){
+[; ;main.c: 85: uint16_t ADC_Read(uint8_t channel){
 [e :U _ADC_Read ]
 [v _channel `uc ~T0 @X0 1 r1 ]
 [f ]
-"87
+"86
 [v _result `ui ~T0 @X0 1 a ]
-[; ;main.c: 87: uint16_t result = 0;
+[; ;main.c: 86: uint16_t result = 0;
 [e = _result -> -> 0 `i `ui ]
-[; ;main.c: 88: ADCON0bits.ADON = 1;
-"88
+[; ;main.c: 87: ADCON0bits.ADON = 1;
+"87
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 89: ADC_SelChannel(channel);
-"89
+[; ;main.c: 88: ADC_SelChannel(channel);
+"88
 [e ( _ADC_SelChannel (1 _channel ]
-[; ;main.c: 90: ADCON0bits.GO = 1;
-"90
+[; ;main.c: 89: ADCON0bits.GO = 1;
+"89
 [e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 91: while(ADCON0bits.GO);
+[; ;main.c: 90: while(ADCON0bits.GO);
+"90
+[e $U 892  ]
+[e :U 893 ]
+[e :U 892 ]
+[e $ != -> . . _ADCON0bits 2 1 `i -> -> -> 0 `i `Vuc `i 893  ]
+[e :U 894 ]
+[; ;main.c: 91: result = (ADRESH<<8) | ADRESL;
 "91
-[e $U 861  ]
-[e :U 862 ]
-[e :U 861 ]
-[e $ != -> . . _ADCON0bits 2 1 `i -> -> -> 0 `i `Vuc `i 862  ]
-[e :U 863 ]
-[; ;main.c: 92: result = (ADRESH<<8) | ADRESL;
-"92
 [e = _result -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[; ;main.c: 93: ADCON0bits.ADON = 0;
-"93
+[; ;main.c: 92: ADCON0bits.ADON = 0;
+"92
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 94: return result;
-"94
+[; ;main.c: 93: return result;
+"93
 [e ) _result ]
-[e $UE 860  ]
-[; ;main.c: 95: }
-"95
-[e :UE 860 ]
+[e $UE 891  ]
+[; ;main.c: 94: }
+"94
+[e :UE 891 ]
 }

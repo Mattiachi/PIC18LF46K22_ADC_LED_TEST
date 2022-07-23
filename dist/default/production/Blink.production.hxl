@@ -10,13 +10,13 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\Blink.production.hex)
-  8h - 1F3h		(dist/default/production\Blink.production.hex)
+  8h - 1F9h		(dist/default/production\Blink.production.hex)
   FFA6h - FFFEh		(dist/default/production\Blink.production.hex)
   200000h - 200007h		(dist/default/production\Blink.production.hex)
   300000h - 30000Dh		(dist/default/production\Blink.production.hex)
  Unused ranges:
   4h - 7h
-  1F4h - FFA5h
+  1FAh - FFA5h
   FFFFh - 1FFFFFh
   200008h - 2FFFFFh
 
@@ -58,7 +58,7 @@
 000001C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000001D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000001E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000001F0 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+000001F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
 ----------------------------------------------------------
 0000FFA0 | -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FFB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
